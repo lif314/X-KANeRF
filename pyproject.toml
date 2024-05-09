@@ -1,0 +1,12 @@
+[project]
+name = "kanerf"
+description = "kanerf repository for creating and registering new methods in nerfstudio."
+version = "0.1.0"
+
+dependencies = ["nerfstudio >= 0.3.4"] 
+
+[tool.setuptools.packages.find]
+include = ["KANeRF*"]
+
+[project.entry-points.'nerfstudio.method_configs']
+kanerf = 'KANeRF.kanerf_config:kanerf_method'
