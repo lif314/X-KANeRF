@@ -16,7 +16,7 @@ from xKANeRF.kanerf import KANeRFModelConfig
 
 kanerf_method = MethodSpecification(
     config=TrainerConfig(
-        method_name="kanerf",
+        method_name="xkanerf",
         steps_per_eval_batch=500,
         steps_per_save=2000,
         max_num_iterations=30000,
@@ -49,5 +49,5 @@ kanerf_method = MethodSpecification(
         viewer=ViewerConfig(num_rays_per_chunk=1 << 15),
         vis="viewer+tensorboard",
     ),
-    description="Base config for KANerf",
+    description="Base config for xKANeRF",
 )
