@@ -10,7 +10,7 @@ from nerfstudio.field_components.encodings import HashEncoding
 from nerfstudio.field_components.spatial_distortions import SpatialDistortion
 
 # from efficient_kan import KAN
-from KANeRF.bspine_kan import KAN
+from KANeRF.kan_models.bspine_kan import KAN
 
 class KANeRFactoField(NerfactoField):
     """Compound Field that uses TCNN

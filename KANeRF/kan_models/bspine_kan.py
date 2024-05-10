@@ -2,7 +2,8 @@ import torch
 import torch.nn.functional as F
 import math
 
-
+# code from https://github.com/Blealtan/efficient-kan
+# Basis function: B-Spline
 class KANLinear(torch.nn.Module):
     def __init__(
         self,
