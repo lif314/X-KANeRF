@@ -5,7 +5,7 @@ import torch
 from nerfstudio.models.nerfacto import NerfactoModel, NerfactoModelConfig
 from nerfstudio.utils import colormaps
 
-from KANeRF.kanerf_field import KANeRFactoField
+from xKANeRF.kanerf_field import KANeRFactoField
 
 
 @dataclass

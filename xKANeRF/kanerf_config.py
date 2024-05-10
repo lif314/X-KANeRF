@@ -11,7 +11,7 @@ from nerfstudio.engine.schedulers import ExponentialDecaySchedulerConfig, Cosine
 from nerfstudio.engine.trainer import TrainerConfig
 from nerfstudio.plugins.types import MethodSpecification
 
-from KANeRF.kanerf import KANeRFModelConfig
+from xKANeRF.kanerf import KANeRFModelConfig
 
 
 kanerf_method = MethodSpecification(

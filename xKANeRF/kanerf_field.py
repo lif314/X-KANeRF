@@ -11,7 +11,7 @@ from nerfstudio.field_components.spatial_distortions import SpatialDistortion
 
 # from efficient_kan import KAN
 # from KANeRF.kan_models.bspine_kan import KAN
-from KANeRF.kan_models.grbf_kan import GRBF_KAN as KAN
+from xKANeRF.xKAN.grbf_kan import GRBF_KAN as KAN
 
 
 class KANeRFactoField(NerfactoField):
