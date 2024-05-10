@@ -41,7 +41,7 @@ pip install nerfstudio
 |NeRFacto|14m, 13s| 2.5| 33.69|0.973|0.0132|
 |NeRFacto-S|13m, 47s|~2.5|32.67|0.962|0.0186|
 |B-Spline| 37m, 20s|0.95|33.10|0.966|0.0154|
-|G-RGF|  54 m, 27 s |0.50|32.31|0.966|0.0174|
+|G-RBF|  54 m, 27 s |0.50|32.31|0.966|0.0174|
 
 # Acknowledgement
 - [KANeRF](https://github.com/Tavish9/KANeRF)
