@@ -30,4 +30,9 @@ pip install ninja git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindi
 pip install nerfstudio
 ```
 
-# Performance Comparision
+# Performance Comparision on `LEGO`
+|Model| Train Time | FPS | PSNR| SSIM | LPIPS | 
+|:---:|:----:|:-----:|:-----:|:----:|:-----:|
+|NeRFacto|14m 13s| 2.5| 33.69|0.973|0.0132|
+|NeRFacto-S|13m 47s|~2.5|32.67|0.962|0.0186|
+|B-Spline| 37m 20s|0.95|33.10|0.966|0.0154|
