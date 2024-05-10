@@ -25,19 +25,9 @@ start_timestamp=$(date -d "$start_time" +%s)
 #     blender-data
 
 # Train nerfacto
-# --pipeline.model.num_layers 1 \
-# --pipeline.model.num_layers_color 1 \
 ns-train nerfacto --data data/nerf_synthetic/lego \
     --pipeline.model.background-color white \
     --pipeline.model.proposal-initial-sampler uniform \
-    --pipeline.model.near-plane 2. \
-    --pipeline.model.far-plane 6. \
-    --pipeline.datamanager.camera-optimizer.mode off \
-    --pipeline.model.use-average-appearance-embedding False \
-    --pipeline.datamanager.train-num-rays-per-batch 4096 \
-    --pipeline.datamanager.eval-num-rays-per-batch 4096 \
-    --pipeline.model.distortion-loss-mult 0 \
-    --pipeline.model.disable-scene-contraction True \
     --vis viewer+tensorboard  \
     blender-data
 
