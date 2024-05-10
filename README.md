@@ -1,8 +1,13 @@
 # xKANeRF: KAN-based NeRF with Different Basis Functions
 
+**Is there any basis function can explain the NeRF formula?!** 
+$$\mathbf{c}, \sigma = F_{\Theta}(\mathbf{x}, \mathbf{d}),$$
+ where $\mathbf{c}=(r,g,b)$ is RGB color, $\sigma$ is density, $\mathbf{x}$ is 3D position, $\mathbf{d}$ is the direction. 
+
+
 [KAN: Kolmogorov-Arnold Networks](https://arxiv.org/abs/2404.19756) is a promising challenger to traditional MLPs. We're thrilled about integrating KAN into [NeRF](https://www.matthewtancik.com/nerf) based on [nerfstudio](https://github.com/nerfstudio-project/nerfstudio)! 
 
-# XKAN
+# xKAN
 | TODO | Basis Functions | Mathtype | Acknowledgement|
 |:--------:|:---------:|:-------:|:------:|
 | √ | B-Spline | $$S_i(x) = a_i + b_i(x - x_i) + c_i(x - x_i)^2 + d_i(x - x_i)^3$$| [Efficient-Kan](https://github.com/Blealtan/efficient-kan) |
