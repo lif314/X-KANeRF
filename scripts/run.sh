@@ -1,5 +1,5 @@
 # kanerf vs nerfacto (compariable params)
-ns-train kanerf --data data/nerf_synthetic/lego \
+ns-train xkanerf --data data/nerf_synthetic/lego \
     --pipeline.model.background-color white \
     --pipeline.model.proposal-initial-sampler uniform \
     --pipeline.model.near-plane 2. --pipeline.model.far-plane 6. \
@@ -19,7 +19,7 @@ ns-train kanerf --data data/nerf_synthetic/lego \
 
 
 # kanerf vs nerfacto (compariable params)
-ns-train nerfacto --data DATA/nerf_synthetic/lego \
+ns-train nerfacto --data data/nerf_synthetic/lego \
     --pipeline.model.background-color white \
     --pipeline.model.proposal-initial-sampler uniform \
     --pipeline.model.near-plane 2. --pipeline.model.far-plane 6. \
@@ -39,7 +39,7 @@ ns-train nerfacto --data DATA/nerf_synthetic/lego \
 
 
 # kanerf vs nerfacto (same layer number and hidden dim)
-ns-train nerfacto --data DATA/nerf_synthetic/lego \
+ns-train nerfacto --data data/nerf_synthetic/lego \
     --pipeline.model.background-color white \
     --pipeline.model.proposal-initial-sampler uniform \
     --pipeline.model.near-plane 2. --pipeline.model.far-plane 6. \
