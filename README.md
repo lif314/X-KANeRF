@@ -1,6 +1,6 @@
 # xKANeRF: KAN-based NeRF with Different Basis Functions
 
-[KAN: Kolmogorov-Arnold Networks](https://arxiv.org/abs/2404.19756) is a promising challenger to traditional MLPs. We're thrilled about integrating KAN into [NeRF](https://www.matthewtancik.com/nerf)! Is KAN suited for **view synthesis** tasks? What challenges will we face? How will we tackle them? We provide our initial observations and future discussion!
+[KAN: Kolmogorov-Arnold Networks](https://arxiv.org/abs/2404.19756) is a promising challenger to traditional MLPs. We're thrilled about integrating KAN into [NeRF](https://www.matthewtancik.com/nerf) based on [nerfstudio](https://github.com/nerfstudio-project/nerfstudio)! 
 
 # XKAN
 | TODO | Basis Functions | Mathtype | Acknowledgement|
@@ -36,3 +36,14 @@ pip install nerfstudio
 |NeRFacto|14m 13s| 2.5| 33.69|0.973|0.0132|
 |NeRFacto-S|13m 47s|~2.5|32.67|0.962|0.0186|
 |B-Spline| 37m 20s|0.95|33.10|0.966|0.0154|
+
+# Acknowledgement
+- [KANeRF](https://github.com/Tavish9/KANeRF)
+    ```bibtex
+    @Manual{kanerf,
+    title = {Hands-On NeRF with KAN},
+    author = {Delin Qu, Qizhi Chen},
+    year = {2024},
+    url = {https://github.com/Tavish9/KANeRF},
+    }
+    ```
