@@ -1,4 +1,5 @@
 # kanerf vs nerfacto (compariable params)
+export CUDA_VISIBLE_DEVICES=1
 ns-train xkanerf --data data/nerf_synthetic/lego \
     --pipeline.model.background-color white \
     --pipeline.model.proposal-initial-sampler uniform \
