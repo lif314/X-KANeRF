@@ -9,6 +9,7 @@ __pycache__/
 temp_git/
 outputs/
 data/
+exports/
 
 # Distribution / packaging
 .Python

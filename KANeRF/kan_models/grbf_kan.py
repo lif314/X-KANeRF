@@ -49,15 +49,16 @@ class FastKANLayer(nn.Module):
         return base + spline
 
 
-class FastKAN(nn.Module):
+class GRBF_KAN(nn.Module):
     def __init__(
         self,
         layers_hidden: List[int],
         grid_min: float = -2.,
         grid_max: float = 2.,
-        num_grids: int = 8,
+        grid_size: int = 8,
         base_activation = nn.SiLU,
         spline_weight_init_scale: float = 0.1,
+        spline_order=0.
     ) -> None:
         super().__init__()
         self.layers = nn.ModuleList([
@@ -65,7 +66,7 @@ class FastKAN(nn.Module):
                 in_dim, out_dim,
                 grid_min=grid_min,
                 grid_max=grid_max,
-                num_grids=num_grids,
+                num_grids=grid_size,
                 base_activation=base_activation,
                 spline_weight_init_scale=spline_weight_init_scale,
             ) for in_dim, out_dim in zip(layers_hidden[:-1], layers_hidden[1:])
