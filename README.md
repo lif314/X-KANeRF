@@ -46,7 +46,7 @@ pip install nerfstudio
 |G-RBF| 19 m, 37 s |0.50|32.39|0.967|0.01721|
 
 # Docs
-- [Universal Approximation Theorem vs. Kolmogorov–Arnold Theorem](docs\Theorem.md)
+- [Universal Approximation Theorem vs. Kolmogorov–Arnold Theorem](docs/Theorem.md)
 
 
 # Acknowledgement
