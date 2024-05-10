@@ -5,10 +5,10 @@
 # XKAN
 | Done | Basis Functions | Mathtype |
 |--------|---------| -------------|
-| [x] | B-Spline | $$S_i(x) = a_i + b_i(x - x_i) + c_i(x - x_i)^2 + d_i(x - x_i)^3$$|
-| [] | Fourier | $$ \phi_k(x) = \sin(2\pi kx), \phi_k(x) = \cos(2\pi kx) $$ |
-| [x] | Gaussian RBF | $$b_{i}(u)=\exp(-(u-u_i)^2)$$|
-| [] | Spherical Harmonics | $$Y_l^m(\theta, \phi) = \sqrt{\frac{2l + 1}{4\pi} \frac{(l - m)!}{(l + m)!}} P_l^m(\cos\theta) e^{im\phi}$$|
+| √ | B-Spline | $$S_i(x) = a_i + b_i(x - x_i) + c_i(x - x_i)^2 + d_i(x - x_i)^3$$|
+| - | Fourier | $$\phi_k(x) = \sin(2\pi kx), \phi_k(x) = \cos(2\pi kx)$$ |
+| √ | Gaussian RBF | $$b_{i}(u)=\exp(-(u-u_i)^2)$$|
+| - | Spherical Harmonics | $$Y_l^m(\theta, \phi) = \sqrt{\frac{2l + 1}{4\pi} \frac{(l - m)!}{(l + m)!}} P_l^m(\cos\theta) e^{im\phi}$$|
 
 
 
