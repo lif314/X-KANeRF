@@ -9,6 +9,7 @@ from nerfstudio.fields.nerfacto_field import NerfactoField
 from nerfstudio.field_components.encodings import HashEncoding
 from nerfstudio.field_components.spatial_distortions import SpatialDistortion
 
+# Basis Functions
 from xKANeRF.xKAN.bspine_kan import BSpline_KAN as KAN
 # from xKANeRF.xKAN.grbf_kan import GRBF_KAN as KAN
 
@@ -108,7 +109,7 @@ class KANeRFactoField(NerfactoField):
             features_per_level=features_per_level,
             implementation=implementation,
         )
-        self.mlp_base_mlp = BSpline_KAN(
+        self.mlp_base_mlp = KAN(
             layers_hidden=[self.mlp_base_grid.get_out_dim()]
             + [hidden_dim] * num_layers
             + [1 + self.geo_feat_dim],
@@ -117,7 +118,7 @@ class KANeRFactoField(NerfactoField):
         )
 
         if self.use_transient_embedding:
-            self.mlp_transient = BSpline_KAN(
+            self.mlp_transient = KAN(
                 layers_hidden=[self.geo_feat_dim + self.transient_embedding_dim]
                 + [hidden_dim_transient] * num_layers_transient
                 +[hidden_dim_transient],
@@ -126,7 +127,7 @@ class KANeRFactoField(NerfactoField):
             )
 
         if self.use_semantics:
-            self.mlp_semantics = BSpline_KAN(
+            self.mlp_semantics = KAN(
                 layers_hidden=[self.geo_feat_dim]
                 + [64, 64]
                 + [hidden_dim_transient],
@@ -135,7 +136,7 @@ class KANeRFactoField(NerfactoField):
             )
 
         if self.use_pred_normals:
-            self.mlp_pred_normals = BSpline_KAN(
+            self.mlp_pred_normals = KAN(
                 layers_hidden=[self.geo_feat_dim + self.position_encoding.get_out_dim()]
                 + [64] * 3
                 + [hidden_dim_transient],
@@ -143,7 +144,7 @@ class KANeRFactoField(NerfactoField):
                 spline_order=spline_order,
             )
 
-        self.mlp_head_base = BSpline_KAN(
+        self.mlp_head_base = KAN(
             layers_hidden=[self.direction_encoding.get_out_dim() + self.geo_feat_dim + self.appearance_embedding_dim]
             + [hidden_dim_color] * num_layers_color
             + [3],
