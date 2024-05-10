@@ -38,12 +38,12 @@ pip install nerfstudio
 # Performance Comparision on `RTX-3090`
 - `nerf_synthetic: lego`
 
-|Model| Train Time | FPS | PSNR| SSIM | LPIPS | 
-|:---:|:----:|:-----:|:-----:|:----:|:-----:|
-|Nerfacto-big|14m, 13s| 2.5| 33.69|0.973|0.0132|
-|Nerfacto|14m, 13s| 2.5| 33.69|0.973|0.0132|
-|B-Spline| 54 m, 13 s|0.95|33.10|0.966|0.0154|
-|G-RBF| 19 m, 37 s |0.50|32.39|0.967|0.01721|
+|Model| Params | Train Time | FPS | PSNR| SSIM | LPIPS | 
+|:---:|:---:|:----:|:-----:|:-----:|:----:|:-----:|
+|Nerfacto-big|-|14m, 13s| 2.5| 33.69|0.973|0.0132|
+|Nerfacto|-|14m, 13s| 2.5| 33.69|0.973|0.0132|
+|B-Spline|-| 54 m, 13 s|0.95|33.10|0.966|0.0154|
+|G-RBF|-| 19 m, 37 s |0.50|32.39|0.967|0.01721|
 
 # Docs
 - [Universal Approximation Theorem vs. Kolmogorov–Arnold Theorem](docs/Theorem.md)
