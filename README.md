@@ -46,9 +46,10 @@ pip install opencv-python==4.3.0.36
 # Performance Comparision on `RTX-3090`
 - `nerf_synthetic: lego / 30k`
 
-|Model| Params | Train Time | FPS | PSNR| SSIM | LPIPS | 
+|Model| Params $\downarrow$ | Train Time $\downarrow$ | FPS $\uparrow$ | PSNR $\uparrow$| SSIM $\uparrow$ | LPIPS $\downarrow$ | 
 |:---:|:---:|:----:|:-----:|:-----:|:----:|:-----:|
-|Nerfacto| - | 11 m, 35 s| 2.5| 33.69|0.973|0.0132|
+|Nerfacto| 8192 | 14m, 13s | 2.5| 33.69|0.973|0.0132|
+|Nerfacto-Tiny| 2176 | 13m, 47s | 2.5| 32.67 |0.962|0.0186|
 |KAN: B-Spline|8092| 54 m, 13 s|0.19|32.33|0.965|0.0174|
 |KAN: G-RBF|3748| 19 m, 37 s |0.50|32.39|0.967|0.01721|
 
