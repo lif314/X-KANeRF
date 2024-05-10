@@ -3,7 +3,7 @@ name = "xkanerf"
 description = "xkanerf repository for creating and registering new methods in nerfstudio."
 version = "0.1.0"
 
-dependencies = ["nerfstudio >= 0.3.4"] 
+dependencies = ["nerfstudio == 0.3.4"] 
 
 [tool.setuptools.packages.find]
 include = ["xKANeRF*"]

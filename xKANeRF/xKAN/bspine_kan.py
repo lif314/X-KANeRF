@@ -233,7 +233,7 @@ class KANLinear(torch.nn.Module):
         )
 
 
-class KAN(torch.nn.Module):
+class BSpline_KAN(torch.nn.Module):
     def __init__(
         self,
         layers_hidden,
@@ -246,7 +246,7 @@ class KAN(torch.nn.Module):
         grid_eps=0.02,
         grid_range=[-1, 1],
     ):
-        super(KAN, self).__init__()
+        super(BSpline_KAN, self).__init__()
         self.grid_size = grid_size
         self.spline_order = spline_order
 
