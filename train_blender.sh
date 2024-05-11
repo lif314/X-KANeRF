@@ -10,7 +10,8 @@ start_timestamp=$(date -d "$start_time" +%s)
 
 ############# kan_basis_type #############
 # 'bspline', 'grbf', 'rbf', 'fourier', 'fcn', 'fcn_inter'
-kan_basis_type='fcn'
+# 'chebyshev', 'jacobi'
+kan_basis_type='jacobi'
 ns-train xkanerf --data data/nerf_synthetic/lego \
     --experiment-name "$kan_basis_type-blender-lego" \
     --pipeline.model.kan_basis_type $kan_basis_type \
