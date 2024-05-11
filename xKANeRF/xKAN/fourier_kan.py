@@ -72,7 +72,8 @@ class Fourier_KAN(nn.Module):
         super().__init__()
         self.layers = nn.ModuleList([
             FourierKANLayer(
-                in_dim, out_dim,
+                inputdim=in_dim, 
+                outdim=out_dim,
                 gridsize=grid_size,
             ) for in_dim, out_dim in zip(layers_hidden[:-1], layers_hidden[1:])
         ])
