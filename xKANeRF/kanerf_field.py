@@ -36,6 +36,12 @@ def get_kan_model(kan_basis_type='bspline'):
     elif kan_basis_type == 'fcn_inter':
         from xKANeRF.xKAN.fcn_kan import FCN_InterpoKAN
         return FCN_InterpoKAN
+    elif kan_basis_type == 'chebyshev':
+        from xKANeRF.xKAN.chebyshev_kan import Chebyshev_KAN
+        return Chebyshev_KAN
+    elif kan_basis_type == 'jacobi':
+        from xKANeRF.xKAN.jacobi_kan import Jacobi_KAN
+        return Jacobi_KAN
     else:
         print("Not Implemented!!!")
 

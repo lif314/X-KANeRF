@@ -11,13 +11,14 @@ Thanks to the excellent work of [KANeRF](https://github.com/Tavish9/KANeRF), I h
 # X-KAN
 | TODO | Basis Functions | Mathtype | Acknowledgement|
 |:--------:|:---------:|:-------:|:------:|
-| √ | B-Spline | $$S_i(x) = a_i + b_i(x - x_i) + c_i(x - x_i)^2 + d_i(x - x_i)^3$$| [Efficient-Kan](https://github.com/Blealtan/efficient-kan) |
-| √ | Fourier | $$\phi_k(x) = \sin(2\pi kx), \phi_k(x) = \cos(2\pi kx)$$ | [FourierKAN](https://github.com/GistNoesis/FourierKAN/) |
-| √ | Gaussian RBF | $$b_{i}(u)=\exp(-(u-u_i)^2)$$| [FastKAN](https://github.com/ZiyaoLi/fast-kan) |
-| √ | RBF | - | [RGFKAN](https://github.com/sidhu2690/RBF-KAN) |
+| √ | [B-Spline](https://en.wikipedia.org/wiki/B-spline) | $$S_i(x) = a_i + b_i(x - x_i) + c_i(x - x_i)^2 + d_i(x - x_i)^3$$| [Efficient-Kan](https://github.com/Blealtan/efficient-kan) |
+| √ | [Fourier](https://en.wikipedia.org/wiki/Fourier_transform) | $$\phi_k(x) = \sin(2\pi kx), \phi_k(x) = \cos(2\pi kx)$$ | [FourierKAN](https://github.com/GistNoesis/FourierKAN/) |
+| √ | [Gaussian RBF](https://en.wikipedia.org/wiki/Radial_basis_function_kernel) | $$b_{i}(u)=\exp(-(u-u_i)^2)$$| [FastKAN](https://github.com/ZiyaoLi/fast-kan) |
+| √ | [Radial basis function](https://en.wikipedia.org/wiki/Radial_basis_function) | - | [RGFKAN](https://github.com/sidhu2690/RBF-KAN) |
 | √ | FCN | - | [FCN-KAN](https://github.com/Zhangyanbo/FCN-KAN) |
 | √ | FCN-Interpolation | - | [FCN-KAN](https://github.com/Zhangyanbo/FCN-KAN) |
-| - | Chebyshev Polynomials | $$\text{First Kind: }T_n(x) = \cos(n \cos^{-1}(x)), \\ \text{Second Kind: } U_n(x) = \frac{\sin((n+1)\cos^{-1}(x))}{\sin(\cos^{-1}(x))}$$ | [ChebyKAN](https://github.com/SynodicMonth/ChebyKAN) |
+| - | [Chebyshev Polynomials](https://en.wikipedia.org/wiki/Chebyshev_polynomials) | $$\text{First Kind: }T_n(x) = \cos(n \cos^{-1}(x)), \\ \text{Second Kind: } U_n(x) = \frac{\sin((n+1)\cos^{-1}(x))}{\sin(\cos^{-1}(x))}$$ | [ChebyKAN](https://github.com/SynodicMonth/ChebyKAN) |
+| - | [Jacobi polynomials](https://en.wikipedia.org/wiki/Jacobi_polynomials) | $$P_n^{(a,b)}(x)$$ | [JacobiKAN](https://github.com/SpaceLearner/JacobiKAN) |
 
 
 # Performance Comparision on `RTX-3090`
