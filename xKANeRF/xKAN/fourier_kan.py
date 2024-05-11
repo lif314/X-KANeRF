@@ -4,20 +4,7 @@ import torch.nn.functional as F
 import numpy as np
 from typing import *
 
-class FourierBasisFunction(nn.Module):
-    def __init__(
-        self,
-        grid_min: float = -2.,
-        grid_max: float = 2.,
-        grid_size: int = 8,  
-    ):
-        super().__init__()
-        grid = torch.linspace(grid_min, grid_max, grid_size)
-        self.grid = torch.nn.Parameter(grid, requires_grad=False)
-
-    def forward(self, x):
-        return torch.exp(-(x[..., None] - self.grid) ** 2)
-        pass
+# # code from https://github.com/GistNoesis/FourierKAN/
 
 #This is inspired by Kolmogorov-Arnold Networks but using 1d fourier coefficients instead of splines coefficients
 #It should be easier to optimize as fourier are more dense than spline (global vs local)
@@ -38,7 +25,7 @@ class FourierKANLayer(nn.Module):
         #independently of the various sizes
         self.fouriercoeffs = torch.nn.Parameter(torch.randn(2,outdim,inputdim,gridsize) / 
                                              (np.sqrt(inputdim) * np.sqrt(self.gridsize) ) )
-        if( self.addbias ):
+        if self.addbias:
             self.bias  = torch.nn.Parameter(torch.zeros(1,outdim))
 
     #x.shape ( ... , indim ) 
@@ -49,7 +36,7 @@ class FourierKANLayer(nn.Module):
         x = torch.reshape(x,(-1,self.inputdim))
         #Starting at 1 because constant terms are in the bias
         k = torch.reshape(torch.arange(1,self.gridsize+1,device=x.device),(1,1,1,self.gridsize))
-        xrshp = torch.reshape(x,(x.shape[0],1,x.shape[1],1) ) 
+        xrshp = torch.reshape(x,(x.shape[0],1,x.shape[1],1))
         #This should be fused to avoid materializing memory
         c = torch.cos( k*xrshp )
         s = torch.sin( k*xrshp )
@@ -72,7 +59,7 @@ class FourierKANLayer(nn.Module):
         print("diff")
         print(diff) #should be ~0
         '''
-        y = torch.reshape( y, outshape)
+        y = torch.reshape(y, outshape)
         return y
 
 class Fourier_KAN(nn.Module):
