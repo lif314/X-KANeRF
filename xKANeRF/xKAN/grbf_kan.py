@@ -1,9 +1,8 @@
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
-from typing import *
+from typing import List
 
-# code from https://github.com/ZiyaoLi/fast-kan
+# code modified from https://github.com/ZiyaoLi/fast-kan
 # Basis function: Gaussian Radial Basis Functions
 class RadialBasisFunction(nn.Module):
     def __init__(

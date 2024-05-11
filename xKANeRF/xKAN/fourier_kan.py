@@ -4,7 +4,7 @@ import torch.nn.functional as F
 import numpy as np
 from typing import *
 
-# # code from https://github.com/GistNoesis/FourierKAN/
+# code modified from https://github.com/GistNoesis/FourierKAN/
 
 #This is inspired by Kolmogorov-Arnold Networks but using 1d fourier coefficients instead of splines coefficients
 #It should be easier to optimize as fourier are more dense than spline (global vs local)

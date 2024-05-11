@@ -13,6 +13,7 @@ $$\mathbf{c}, \sigma = F_{\Theta}(\mathbf{x}, \mathbf{d}),$$
 | √ | B-Spline | $$S_i(x) = a_i + b_i(x - x_i) + c_i(x - x_i)^2 + d_i(x - x_i)^3$$| [Efficient-Kan](https://github.com/Blealtan/efficient-kan) |
 | √ | Fourier | $$\phi_k(x) = \sin(2\pi kx), \phi_k(x) = \cos(2\pi kx)$$ | [FourierKAN](https://github.com/GistNoesis/FourierKAN/) |
 | √ | Gaussian RBF | $$b_{i}(u)=\exp(-(u-u_i)^2)$$| [FastKAN](https://github.com/ZiyaoLi/fast-kan) |
+| √ | RBF | - | [RGFKAN](https://github.com/sidhu2690/RBF-KAN) |
 | - | Chebyshev Polynomials | $$\text{First Kind: }T_n(x) = \cos(n \cos^{-1}(x)), \\ \text{Second Kind: } U_n(x) = \frac{\sin((n+1)\cos^{-1}(x))}{\sin(\cos^{-1}(x))}$$ | [ChebyKAN](https://github.com/SynodicMonth/ChebyKAN) |
 |- | FCN | - | [FCN-KAN](https://github.com/Zhangyanbo/FCN-KAN) |
 
@@ -53,7 +54,9 @@ pip install opencv-python==4.3.0.36
 |Nerfacto-Tiny| 2176 |- | ~13m | 2.5| 32.67 |0.962|0.0186|
 |KAN: B-Spline|8092| ~37K | ~54 m|0.19|32.33|0.965|0.0174|
 |KAN: G-RBF|3748 | ~115K | ~19 m |0.50|32.39|0.967|0.0172|
+|KAN: RBF|- | - | - |-|-|-|-|
 |KAN: Fourier| 5222 | ~80K | ~25 m |0.42 | 31.72 |0.956|0.0241|
+|-| |  |  |||||
 
 - `360_v2: garden / 30k`, todo
 

@@ -4,7 +4,7 @@ import torch.nn.functional as F
 import numpy as np
 from typing import *
 
-# code from https://github.com/Zhangyanbo/FCN-KAN
+# code modified from https://github.com/Zhangyanbo/FCN-KAN
 
 def heaviside_theta(x, mu, r):
     """Heaviside theta function with parameters mu and r.
