@@ -18,6 +18,9 @@ from xKANeRF.xKAN.fcn_kan import FCN_InterpoKAN as KAN
 
 
 def get_kan_model(kan_basis_type='bspline'):
+    if kan_basis_type == 'mlp':
+        from xKANeRF.xKAN.nerfacto_mlp import Nefacto_MLP
+        return Nefacto_MLP
     if kan_basis_type == 'bspline':
         from xKANeRF.xKAN.bspine_kan import BSpline_KAN
         return BSpline_KAN

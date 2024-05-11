@@ -1,0 +1,79 @@
+import torch
+import torch.nn as nn
+from typing import Optional, Set, Tuple, List
+
+# code modified from https://github.com/nerfstudio-project/nerfstudio
+# Torch version, no tcnn
+class Nefacto_MLP(nn.Module):
+    """Multilayer perceptron
+
+    Args:
+        in_dim: Input layer dimension
+        num_layers: Number of network layers
+        layer_width: Width of each MLP layer
+        out_dim: Output layer dimension. Uses layer_width if None.
+        activation: intermediate layer activation function.
+        out_activation: output activation function.
+        implementation: Implementation of hash encoding. Fallback to torch if tcnn not available.
+    """
+
+    def __init__(
+        self,
+        layers_hidden: List[int],
+        grid_size: int = 8, # placeholder
+        spline_order: int = 0., # placeholder
+        layer_width: int = 256,
+        skip_connections: Optional[Tuple[int]] = (4,),
+        activation: Optional[nn.Module] = nn.ReLU(),
+        out_activation: Optional[nn.Module] = nn.ReLU(),
+    ) -> None:
+        super().__init__()
+        self.in_dim = layers_hidden[0]
+        assert self.in_dim > 0
+        self.out_dim = layers_hidden[-1]
+        self.num_layers = len(layers_hidden) - 2
+        self.layer_width = layers_hidden[1] # hidden_dim
+        self.skip_connections = skip_connections
+        self._skip_connections: Set[int] = set(skip_connections) if skip_connections else set()
+        self.activation = activation
+        self.out_activation = out_activation
+
+        self.build_nn_modules()
+
+    def build_nn_modules(self) -> None:
+        """Initialize the torch version of the multi-layer perceptron."""
+        layers = []
+        if self.num_layers == 1:
+            layers.append(nn.Linear(self.in_dim, self.out_dim))
+        else:
+            for i in range(self.num_layers - 1):
+                if i == 0:
+                    assert i not in self._skip_connections, "Skip connection at layer 0 doesn't make sense."
+                    layers.append(nn.Linear(self.in_dim, self.layer_width))
+                elif i in self._skip_connections:
+                    layers.append(nn.Linear(self.layer_width + self.in_dim, self.layer_width))
+                else:
+                    layers.append(nn.Linear(self.layer_width, self.layer_width))
+            layers.append(nn.Linear(self.layer_width, self.out_dim))
+        self.layers = nn.ModuleList(layers)
+
+    def forward(self, in_tensor):
+        """Process input with a multilayer perceptron.
+
+        Args:
+            in_tensor: Network input
+
+        Returns:
+            MLP network output
+        """
+        x = in_tensor
+        for i, layer in enumerate(self.layers):
+            # as checked in `build_nn_modules`, 0 should not be in `_skip_connections`
+            if i in self._skip_connections:
+                x = torch.cat([in_tensor, x], -1)
+            x = layer(x)
+            if self.activation is not None and i < len(self.layers) - 1:
+                x = self.activation(x)
+        if self.out_activation is not None:
+            x = self.out_activation(x)
+        return x
