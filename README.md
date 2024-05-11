@@ -33,7 +33,7 @@ Thanks to the excellent work of [KANeRF](https://github.com/Tavish9/KANeRF), I u
 |:---:|:---:|:----:|:----:|:-----:|:-----:|:----:|:-----:|
 |Nerfacto| 8192 | - | ~14m | 2.5| 33.69|0.973|0.0132|
 |Nerfacto-Tiny| 2176 |- | ~13m | 2.5| 32.67 |0.962|0.0186|
-|[KAN: B-Spline](/xKANeRF/xKAN/bspine_kan.py)|8092| ~37K | ~54 m|0.19|32.33|0.965|0.0174|
+|[KAN: B-Spline](/blob/main/xKANeRF/xKAN/bspine_kan.py)|8092| ~37K | ~54 m|0.19|32.33|0.965|0.0174|
 |[KAN: G-RBF](/xKANeRF/xKAN/grbf_kan.py)|3748 | ~115K | ~19 m |0.50|32.39|0.967|0.0172|
 |[KAN: RBF](/xKANeRF/xKAN/rbf_kan.py)| 3512 | ~140K | ~15m |0.71|32.57|0.966| 0.0177|
 |[KAN: Fourier](/xKANeRF/xKAN/fourier_kan.py)| 5222 | ~80K | ~25 m |0.42 | 31.72 |0.956|0.0241|
