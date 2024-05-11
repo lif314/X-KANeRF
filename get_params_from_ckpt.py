@@ -1,6 +1,6 @@
 import torch
 
-checkpoint = torch.load('outputs/lego/xkanerf/2024-05-10_173644/nerfstudio_models/step-000029999.ckpt')
+checkpoint = torch.load('outputs/fourierkan-blender-lego/xkanerf/2024-05-11_092040/nerfstudio_models/step-000029999.ckpt')
 
 def count_parameters(obj, prefix=''):
     total_params = 0
