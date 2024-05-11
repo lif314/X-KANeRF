@@ -44,18 +44,18 @@ pip install opencv-python==4.3.0.36
 ```
 
 # Performance Comparision on `RTX-3090`
-> Note that due to nerfstudio's use of [TCNN](https://github.com/NVlabs/tiny-cuda-nn) to accelerate MLP, this may not be fair to `xKANeRF`. Therefore, we use [nerf-pytorch](https://github.com/yenchenlin/nerf-pytorch) for evaluation.
+> Note that due to nerfstudio's use of [TCNN](https://github.com/NVlabs/tiny-cuda-nn) to accelerate MLP, this may not be fair to `xKANeRF`. Therefore, I use [nerf-pytorch](https://github.com/yenchenlin/nerf-pytorch) for evaluation. However, I am still confused about how to fairly compare!
 
 - `nerf_synthetic: lego / 30k`
 
-|Model| Params $\downarrow$ | Train Time $\downarrow$ | FPS $\uparrow$ | PSNR $\uparrow$| SSIM $\uparrow$ | LPIPS $\downarrow$ | 
-|:---:|:---:|:----:|:-----:|:-----:|:----:|:-----:|
-|NeRF-pytorch|-|-|-|-|-|-|
-|Nerfacto| 8192 | 14m, 13s | 2.5| 33.69|0.973|0.0132|
-|Nerfacto-Tiny| 2176 | 13m, 47s | 2.5| 32.67 |0.962|0.0186|
-|KAN: B-Spline|8092| 54 m, 13 s|0.19|32.33|0.965|0.0174|
-|KAN: G-RBF|3748| 19 m, 37 s |0.50|32.39|0.967|0.0172|
-|KAN: Fourier| 5222 | 34 m, 57 s |0.42 | 31.72 |0.956|0.0241|
+|Model| Params $\downarrow$ | It/s $\uparrow$ | Train Time $\downarrow$ | FPS $\uparrow$ | PSNR $\uparrow$| SSIM $\uparrow$ | LPIPS $\downarrow$ | 
+|:---:|:---:|:----:|:----:|:-----:|:-----:|:----:|:-----:|
+|NeRF-pytorch|-|10.08|-|-|-|-|-|
+|Nerfacto| 8192 | - | 14m, 13s | 2.5| 33.69|0.973|0.0132|
+|Nerfacto-Tiny| 2176 |- | 13m, 47s | 2.5| 32.67 |0.962|0.0186|
+|KAN: B-Spline|8092| - | 54 m, 13 s|0.19|32.33|0.965|0.0174|
+|KAN: G-RBF|3748 | - | 19 m, 37 s |0.50|32.39|0.967|0.0172|
+|KAN: Fourier| 5222 | - | 34 m, 57 s |0.42 | 31.72 |0.956|0.0241|
 
 - `360_v2: garden / 30k`, todo
 
