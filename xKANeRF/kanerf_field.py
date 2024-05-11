@@ -12,7 +12,9 @@ from nerfstudio.field_components.spatial_distortions import SpatialDistortion
 # Basis Functions
 # from xKANeRF.xKAN.bspine_kan import BSpline_KAN as KAN
 # from xKANeRF.xKAN.grbf_kan import GRBF_KAN as KAN
-from xKANeRF.xKAN.fourier_kan import Fourier_KAN as KAN
+# from xKANeRF.xKAN.fourier_kan import Fourier_KAN as KAN
+# from xKANeRF.xKAN.fcn_kan import FCN_KAN as KAN
+from xKANeRF.xKAN.fcn_kan import FCN_InterpoKAN as KAN
 
 
 class KANeRFactoField(NerfactoField):

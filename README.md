@@ -15,7 +15,8 @@ $$\mathbf{c}, \sigma = F_{\Theta}(\mathbf{x}, \mathbf{d}),$$
 | √ | Gaussian RBF | $$b_{i}(u)=\exp(-(u-u_i)^2)$$| [FastKAN](https://github.com/ZiyaoLi/fast-kan) |
 | √ | RBF | - | [RGFKAN](https://github.com/sidhu2690/RBF-KAN) |
 | - | Chebyshev Polynomials | $$\text{First Kind: }T_n(x) = \cos(n \cos^{-1}(x)), \\ \text{Second Kind: } U_n(x) = \frac{\sin((n+1)\cos^{-1}(x))}{\sin(\cos^{-1}(x))}$$ | [ChebyKAN](https://github.com/SynodicMonth/ChebyKAN) |
-|- | FCN | - | [FCN-KAN](https://github.com/Zhangyanbo/FCN-KAN) |
+| √ | FCN | - | [FCN-KAN](https://github.com/Zhangyanbo/FCN-KAN) |
+| √ | FCN-Interpolation | - | [FCN-KAN](https://github.com/Zhangyanbo/FCN-KAN) |
 
 
 # Installation
@@ -56,8 +57,13 @@ pip install opencv-python==4.3.0.36
 |KAN: G-RBF|3748 | ~115K | ~19 m |0.50|32.39|0.967|0.0172|
 |KAN: RBF|- | - | - |-|-|-|-|
 |KAN: Fourier| 5222 | ~80K | ~25 m |0.42 | 31.72 |0.956|0.0241|
+<<<<<<< HEAD
 |-| |  |  |||||
 
+=======
+|KAN: FCN| - | ~4K | ~9h| - | - | -| - |
+|KAN: FCN-Interpolation| - | ~52K | ~40m| - | - | - | - |
+>>>>>>> 1d262bb39ff375b7549a9e59b8d75477e4f16f31
 - `360_v2: garden / 30k`, todo
 
 # Docs
