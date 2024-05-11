@@ -57,13 +57,9 @@ pip install opencv-python==4.3.0.36
 |KAN: G-RBF|3748 | ~115K | ~19 m |0.50|32.39|0.967|0.0172|
 |KAN: RBF|- | - | - |-|-|-|-|
 |KAN: Fourier| 5222 | ~80K | ~25 m |0.42 | 31.72 |0.956|0.0241|
-<<<<<<< HEAD
-|-| |  |  |||||
-
-=======
 |KAN: FCN| - | ~4K | ~9h| - | - | -| - |
 |KAN: FCN-Interpolation| - | ~52K | ~40m| - | - | - | - |
->>>>>>> 1d262bb39ff375b7549a9e59b8d75477e4f16f31
+
 - `360_v2: garden / 30k`, todo
 
 # Docs
