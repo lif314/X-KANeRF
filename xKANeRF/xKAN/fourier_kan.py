@@ -37,7 +37,7 @@ class FourierKANLayer(nn.Module):
         #then each coordinates of the output is of unit variance 
         #independently of the various sizes
         self.fouriercoeffs = torch.nn.Parameter(torch.randn(2,outdim,inputdim,gridsize) / 
-                                             (torch.sqrt(inputdim) * np.sqrt(self.gridsize) ) )
+                                             (np.sqrt(inputdim) * np.sqrt(self.gridsize) ) )
         if( self.addbias ):
             self.bias  = torch.nn.Parameter(torch.zeros(1,outdim))
 
@@ -79,16 +79,13 @@ class Fourier_KAN(nn.Module):
     def __init__(
         self,
         layers_hidden: List[int],
-        grid_min: float = -2.,
-        grid_max: float = 2.,
         grid_size: int = 8,
+        spline_order: int = 0, #  placeholder
     ) -> None:
         super().__init__()
         self.layers = nn.ModuleList([
             FourierKANLayer(
                 in_dim, out_dim,
-                grid_min=grid_min,
-                grid_max=grid_max,
                 gridsize=grid_size,
             ) for in_dim, out_dim in zip(layers_hidden[:-1], layers_hidden[1:])
         ])
