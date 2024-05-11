@@ -40,7 +40,7 @@ Thanks to the excellent work of [KANeRF](https://github.com/Tavish9/KANeRF), I u
 |KAN: FCN(Iters: 4k)| 5184 | ~4K | ~90m | 0.02 | 29.67 | 0.938 | 0.0401 |
 |KAN: FCN-Interpolation| 6912 | ~52K | ~40m| 0.21 | 32.67 | 0.965 | 0.0187 |
 |KAN: Chebyshev | 4396 | ~53k | ~40m| 0.34 | 28.56| 0.924 | 0.0523 |
-|KAN: Jacobi | - | ~72k | ~30m| | |||
+|KAN: Jacobi | 3532 | ~72k | ~30m| 0.37 | 27.88 | 0.915 |0.0553|
 
 
 - `360_v2: garden / 30k`, todo
