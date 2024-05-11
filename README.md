@@ -11,7 +11,7 @@ $$\mathbf{c}, \sigma = F_{\Theta}(\mathbf{x}, \mathbf{d}),$$
 | TODO | Basis Functions | Mathtype | Acknowledgement|
 |:--------:|:---------:|:-------:|:------:|
 | √ | B-Spline | $$S_i(x) = a_i + b_i(x - x_i) + c_i(x - x_i)^2 + d_i(x - x_i)^3$$| [Efficient-Kan](https://github.com/Blealtan/efficient-kan) |
-| - | Fourier | $$\phi_k(x) = \sin(2\pi kx), \phi_k(x) = \cos(2\pi kx)$$ | [FourierKAN](https://github.com/GistNoesis/FourierKAN/) |
+| √ | Fourier | $$\phi_k(x) = \sin(2\pi kx), \phi_k(x) = \cos(2\pi kx)$$ | [FourierKAN](https://github.com/GistNoesis/FourierKAN/) |
 | √ | Gaussian RBF | $$b_{i}(u)=\exp(-(u-u_i)^2)$$| [FastKAN](https://github.com/ZiyaoLi/fast-kan) |
 | - | Chebyshev Polynomials | $$\text{First Kind: }T_n(x) = \cos(n \cos^{-1}(x)), \\ \text{Second Kind: } U_n(x) = \frac{\sin((n+1)\cos^{-1}(x))}{\sin(\cos^{-1}(x))}$$ | [ChebyKAN](https://github.com/SynodicMonth/ChebyKAN) |
 |- | FCN | - | [FCN-KAN](https://github.com/Zhangyanbo/FCN-KAN) |
@@ -44,13 +44,11 @@ pip install opencv-python==4.3.0.36
 ```
 
 # Performance Comparision on `RTX-3090`
-> Note that due to nerfstudio's use of [TCNN](https://github.com/NVlabs/tiny-cuda-nn) to accelerate MLP, this may not be fair to `xKANeRF`. Therefore, I use [nerf-pytorch](https://github.com/yenchenlin/nerf-pytorch) for evaluation. However, I am still confused about how to fairly compare!
 
 - `nerf_synthetic: lego / 30k`
 
 |Model| Params $\downarrow$ | It/s $\uparrow$ | Train Time $\downarrow$ | FPS $\uparrow$ | PSNR $\uparrow$| SSIM $\uparrow$ | LPIPS $\downarrow$ | 
 |:---:|:---:|:----:|:----:|:-----:|:-----:|:----:|:-----:|
-|NeRF-pytorch|-|10.08|-|-|-|-|-|
 |Nerfacto| 8192 | - | 14m, 13s | 2.5| 33.69|0.973|0.0132|
 |Nerfacto-Tiny| 2176 |- | 13m, 47s | 2.5| 32.67 |0.962|0.0186|
 |KAN: B-Spline|8092| - | 54 m, 13 s|0.19|32.33|0.965|0.0174|
