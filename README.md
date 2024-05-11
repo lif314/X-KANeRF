@@ -4,7 +4,7 @@
 $$\mathbf{c}, \sigma = F_{\Theta}(\mathbf{x}, \mathbf{d}),$$
  where $\mathbf{c}=(r,g,b)$ is RGB color, $\sigma$ is density, $\mathbf{x}$ is 3D position, $\mathbf{d}$ is the direction. 
 
-Thanks to the excellent work of [KANeRF](https://github.com/Tavish9/KANeRF), I humbly utilized [Kolmogorov-Arnold Networks (KAN)](https://github.com/KindXiaoming/pykan) with different basis functions to fit the [NeRF](https://www.matthewtancik.com/nerf) equation. 
+Thanks to the excellent work of [KANeRF](https://github.com/Tavish9/KANeRF), I just utilize [Kolmogorov-Arnold Networks (KAN)](https://github.com/KindXiaoming/pykan) with different basis functions to fit the [NeRF](https://www.matthewtancik.com/nerf) equation. 
 
 ### The code is very COARSE, welcome any suggestions and criticism!
 
