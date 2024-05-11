@@ -7,7 +7,7 @@ start_timestamp=$(date -d "$start_time" +%s)
 
 # export CUDA_VISIBLE_DEVICES=1
 ns-train xkanerf --data data/nerf_synthetic/lego \
-    --experiment-name "fourierkan-blender-lego" \
+    --experiment-name "bspline-blender-lego" \
     --pipeline.model.background-color white \
     --pipeline.model.proposal-initial-sampler uniform \
     --pipeline.model.near-plane 2. --pipeline.model.far-plane 6. \
