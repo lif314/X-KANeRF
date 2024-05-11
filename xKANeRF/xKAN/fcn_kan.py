@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import numpy as np
 from typing import *
 
 # code from https://github.com/Zhangyanbo/FCN-KAN
@@ -70,7 +69,7 @@ def phi(x, w1, w2, b1, b2, n_sin):
     Returns:
         torch.Tensor: Transformed tensor.
     """
-    omega = (2 ** torch.arange(0, n_sin)).float().reshape(-1, 1)
+    omega = (2 ** torch.arange(0, n_sin, device=x.device)).float().reshape(-1, 1)
     omega_x = F.linear(x, omega, bias=None)
     x = torch.cat([x, torch.sin(omega_x), torch.cos(omega_x)], dim=-1)
     
@@ -146,6 +145,13 @@ class FCNKANLayer(nn.Module):
         Returns:
             torch.Tensor: Summed output after mapping each dimensions through phi.
         """
+        device = x.device
+        self.W1 = self.W1.to(device)
+        self.W2 = self.W2.to(device)
+        self.B1 = self.B1.to(device)
+        self.B2 = self.B2.to(device)
+        self.fcn_n_sin = self.fcn_n_sin.to(device)
+
         if len(x.shape) == 1:
             x = x.unsqueeze(0)
             
@@ -233,6 +239,10 @@ class FCNKANInterpoLayer(nn.Module):
         Returns:
             torch.Tensor: Summed output after mapping each dimensions through phi.
         """
+        device = x.device
+        self.X = self.X.to(device)
+        self.Y = self.Y.to(device)
+        
         if len(x.shape) == 1:
             x = x.unsqueeze(0)
             
@@ -289,8 +299,8 @@ class FCN_KAN(nn.Module):
             FCNKANLayer(
                 dim_in=in_dim,
                 dim_out=out_dim,
-                fcn_hidden=32, # default
-                fcn_n_sin=3 # default
+                fcn_hidden=1, # default ?
+                fcn_n_sin=1 # default ?
             ) for in_dim, out_dim in zip(layers_hidden[:-1], layers_hidden[1:])
         ])
 
@@ -311,7 +321,7 @@ class FCN_InterpoKAN(nn.Module):
             FCNKANInterpoLayer(
                 dim_in=in_dim,
                 dim_out=out_dim,
-                num_x=64, # default 
+                num_x=8, # default 
                 x_min=-2, # default
                 x_max=2   # default
             ) for in_dim, out_dim in zip(layers_hidden[:-1], layers_hidden[1:])
