@@ -6,8 +6,13 @@ echo "Start Time: $start_time"
 start_timestamp=$(date -d "$start_time" +%s)
 
 # export CUDA_VISIBLE_DEVICES=1
+
+
+############# kan_basis_type #############
+# 'bspline', 'grbf', 'rbf', 'fourier', 'fcn', 'fcn_inter'
 ns-train xkanerf --data data/nerf_synthetic/lego \
-    --experiment-name "fcninterkan-blender-lego" \
+    --experiment-name "rbf-blender-lego" \
+    --pipeline.model.kan_basis_type "rbf" \
     --pipeline.model.background-color white \
     --pipeline.model.proposal-initial-sampler uniform \
     --pipeline.model.near-plane 2. --pipeline.model.far-plane 6. \

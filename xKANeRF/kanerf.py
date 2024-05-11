@@ -14,6 +14,7 @@ class KANeRFModelConfig(NerfactoModelConfig):
     num_layers_color: int = 3
     num_layers: int = 2
     geo_feat_dim: int = 15
+    kan_basis_type: str = "spline" # []
 
 
 class KANeRFModel(NerfactoModel):
@@ -40,6 +41,7 @@ class KANeRFModel(NerfactoModel):
             use_pred_normals=self.config.predict_normals,
             use_average_appearance_embedding=self.config.use_average_appearance_embedding,
             implementation=self.config.implementation,
+            kan_basis_type=self.config.kan_basis_type
         )
 
     def get_image_metrics_and_images(

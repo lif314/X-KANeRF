@@ -6,8 +6,8 @@ echo "Start Time: $start_time"
 start_timestamp=$(date -d "$start_time" +%s)
 
 # export CUDA_VISIBLE_DEVICES=1
- ns-eval --load-config  \
-         --output-path 
+ ns-eval --load-config "config-path" \
+         --output-path "output-path/eval.json"\
 
 end_time=$(date +"%Y-%m-%d %H:%M:%S")
 echo "End Time: $end_time"

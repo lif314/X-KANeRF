@@ -1,6 +1,5 @@
 import torch
-
-checkpoint = torch.load('outputs/fourierkan-blender-lego/xkanerf/2024-05-11_092040/nerfstudio_models/step-000029999.ckpt')
+import sys
 
 def count_parameters(obj, prefix=''):
     total_params = 0
@@ -30,9 +29,17 @@ def count_parameters(obj, prefix=''):
 
     return {'total': total_params, 'trainable': trainable_params, 'non_trainable': non_trainable_params}
 
-# # 统计所有参数
-result = count_parameters(checkpoint)
 
-print(f"Total parameters: {result['total']}")
-print(f"Trainable parameters: {result['trainable']}")
-print(f"Non-trainable parameters: {result['non_trainable']}")
+if __name__ == '__main__':
+    # 获取命令行参数
+    if len(sys.argv) < 2:
+        print("Usage: python script.py <checkpoint_path>")
+        sys.exit(1)
+
+    checkpoint_path = sys.argv[1]
+
+    result = count_parameters(torch.load(checkpoint_path))
+
+    print(f"Total parameters: {result['total']}")
+    print(f"Trainable parameters: {result['trainable']}")
+    print(f"Non-trainable parameters: {result['non_trainable']}")

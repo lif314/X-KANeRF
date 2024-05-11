@@ -17,6 +17,29 @@ from nerfstudio.field_components.spatial_distortions import SpatialDistortion
 from xKANeRF.xKAN.fcn_kan import FCN_InterpoKAN as KAN
 
 
+def get_kan_model(kan_basis_type='bspline'):
+    if kan_basis_type == 'bspline':
+        from xKANeRF.xKAN.bspine_kan import BSpline_KAN
+        return BSpline_KAN
+    elif kan_basis_type == 'grbf':
+        from xKANeRF.xKAN.grbf_kan import GRBF_KAN
+        return GRBF_KAN
+    elif kan_basis_type == 'rbf':
+        from xKANeRF.xKAN.rbf_kan import RBF_KAN
+        return RBF_KAN
+    elif kan_basis_type == 'fourier':
+        from xKANeRF.xKAN.fourier_kan import Fourier_KAN
+        return Fourier_KAN
+    elif kan_basis_type == 'fcn':
+        from xKANeRF.xKAN.fcn_kan import FCN_KAN
+        return FCN_KAN
+    elif kan_basis_type == 'fcn_inter':
+        from xKANeRF.xKAN.fcn_kan import FCN_InterpoKAN
+        return FCN_InterpoKAN
+    else:
+        print("Not Implemented!!!")
+
+
 class KANeRFactoField(NerfactoField):
     """Compound Field that uses TCNN
 
@@ -75,6 +98,7 @@ class KANeRFactoField(NerfactoField):
         use_average_appearance_embedding: bool = False,
         spatial_distortion: Optional[SpatialDistortion] = None,
         implementation: Literal["tcnn", "torch"] = "tcnn",
+        kan_basis_type: str = "bspline"
     ) -> None:
         super().__init__(
             aabb,
@@ -103,6 +127,7 @@ class KANeRFactoField(NerfactoField):
             implementation,
         )
         self.implementation = implementation
+        self.kan_basis_type = kan_basis_type
 
         self.mlp_base_grid = HashEncoding(
             num_levels=num_levels,
@@ -112,6 +137,9 @@ class KANeRFactoField(NerfactoField):
             features_per_level=features_per_level,
             implementation=implementation,
         )
+        
+        KAN = get_kan_model(self.kan_basis_type)
+
         self.mlp_base_mlp = KAN(
             layers_hidden=[self.mlp_base_grid.get_out_dim()]
             + [hidden_dim] * num_layers

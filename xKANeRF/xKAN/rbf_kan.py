@@ -18,12 +18,20 @@ class RBFLinear(nn.Module):
        return basis.view(basis.size(0), -1).matmul(self.spline_weight)
 
 class RBFKANLayer(nn.Module):
-   def __init__(self, input_dim, output_dim, grid_min=-2., grid_max=2., num_grids=8, use_base_update=True, base_activation=nn.SiLU(), spline_weight_init_scale=0.1):
+   def __init__(self, 
+                input_dim: int, 
+                output_dim: int,
+                grid_min: float = -2.,
+                grid_max: float = 2.,
+                num_grids: int = 8,
+                base_activation = nn.SiLU,
+                spline_weight_init_scale: float = 0.1,
+                use_base_update=True):
        super().__init__()
        self.input_dim = input_dim
        self.output_dim = output_dim
        self.use_base_update = use_base_update
-       self.base_activation = base_activation
+       self.base_activation = base_activation()
        self.spline_weight_init_scale = spline_weight_init_scale
        self.rbf_linear = RBFLinear(input_dim, output_dim, grid_min, grid_max, num_grids, spline_weight_init_scale)
        self.base_linear = nn.Linear(input_dim, output_dim) if use_base_update else None
@@ -42,8 +50,8 @@ class RBF_KAN(nn.Module):
         grid_min: float = -2.,
         grid_max: float = 2.,
         grid_size: int = 8,
-        use_base_update=True,
         base_activation = nn.SiLU,
+        use_base_update=True,
         spline_weight_init_scale: float = 0.1,
         spline_order=0.
     ) -> None:
