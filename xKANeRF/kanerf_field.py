@@ -157,6 +157,7 @@ class KANeRFactoField(NerfactoField):
             spline_order=spline_order,
         )
 
+        # transients
         if self.use_transient_embedding:
             self.mlp_transient = KAN(
                 layers_hidden=[self.geo_feat_dim + self.transient_embedding_dim]
@@ -166,6 +167,7 @@ class KANeRFactoField(NerfactoField):
                 spline_order=spline_order,
             )
 
+        # semantics
         if self.use_semantics:
             self.mlp_semantics = KAN(
                 layers_hidden=[self.geo_feat_dim]
@@ -175,6 +177,7 @@ class KANeRFactoField(NerfactoField):
                 spline_order=spline_order,
             )
 
+        # predicted normals
         if self.use_pred_normals:
             self.mlp_pred_normals = KAN(
                 layers_hidden=[self.geo_feat_dim + self.position_encoding.get_out_dim()]
@@ -184,6 +187,7 @@ class KANeRFactoField(NerfactoField):
                 spline_order=spline_order,
             )
 
+        # Color
         self.mlp_head_base = KAN(
             layers_hidden=[self.direction_encoding.get_out_dim() + self.geo_feat_dim + self.appearance_embedding_dim]
             + [hidden_dim_color] * num_layers_color

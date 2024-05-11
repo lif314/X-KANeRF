@@ -25,7 +25,7 @@ class Nefacto_MLP(nn.Module):
         layer_width: int = 256,
         skip_connections: Optional[Tuple[int]] = (4,),
         activation: Optional[nn.Module] = nn.ReLU(),
-        out_activation: Optional[nn.Module] = nn.ReLU(),
+        out_activation: Optional[nn.Module] = None,
     ) -> None:
         super().__init__()
         self.in_dim = layers_hidden[0]
@@ -33,6 +33,7 @@ class Nefacto_MLP(nn.Module):
         self.out_dim = layers_hidden[-1]
         self.num_layers = len(layers_hidden) - 2
         self.layer_width = layers_hidden[1] # hidden_dim
+        # self.layer_width = layer_width # hidden_dim
         self.skip_connections = skip_connections
         self._skip_connections: Set[int] = set(skip_connections) if skip_connections else set()
         self.activation = activation
