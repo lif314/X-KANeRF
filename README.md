@@ -19,9 +19,11 @@ Thanks to the excellent work of [KANeRF](https://github.com/Tavish9/KANeRF), I u
 | √ | FCN-Interpolation | - | [FCN-KAN](https://github.com/Zhangyanbo/FCN-KAN) |
 | - | [Chebyshev Polynomials](https://en.wikipedia.org/wiki/Chebyshev_polynomials) | $$\text{First Kind: }T_n(x) = \cos(n \cos^{-1}(x)), \\ \text{Second Kind: } U_n(x) = \frac{\sin((n+1)\cos^{-1}(x))}{\sin(\cos^{-1}(x))}$$ | [ChebyKAN](https://github.com/SynodicMonth/ChebyKAN) |
 | - | [Jacobi polynomials](https://en.wikipedia.org/wiki/Jacobi_polynomials) | $$P_n^{(a,b)}(x)$$ | [JacobiKAN](https://github.com/SpaceLearner/JacobiKAN) |
+| - | [Hermite polynomials](https://en.wikipedia.org/wiki/Hermite_polynomials)  | -  | [OrthogPolyKANs](https://github.com/Boris-73-TA/OrthogPolyKANs) |
+| - | [Gegenbauer polynomials](https://en.wikipedia.org/wiki/Gegenbauer_polynomials) | -  | - |
+| - | [Legendre polynomials](https://en.wikipedia.org/wiki/Legendre_polynomials) | -  | - |
+| - | [Laguerre polynomials](https://en.wikipedia.org/wiki/Laguerre_polynomials) | - | -|
 
-
-[OrthogPolyKANs](https://github.com/Boris-73-TA/OrthogPolyKANs)
 
 # Performance Comparision on `RTX-3090`
 
