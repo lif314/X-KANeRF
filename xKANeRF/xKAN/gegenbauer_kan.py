@@ -36,7 +36,7 @@ class GegenbauerKANLayer(nn.Module):
 class GegenbauerKANLayerWithNorm(nn.Module):
     def __init__(self, input_dim, output_dim, degree, alpha_param):
         super(GegenbauerKANLayerWithNorm, self).__init__()
-        self.layer = GegenbauerKANLayer(input_dim=input_dim, output_dim=output_dim, degree=degree, alpha_param=alpha)
+        self.layer = GegenbauerKANLayer(input_dim=input_dim, output_dim=output_dim, degree=degree, alpha_param=alpha_param)
         self.layer_norm = nn.LayerNorm(output_dim) # To avoid gradient vanishing caused by tanh
 
     def forward(self, x):

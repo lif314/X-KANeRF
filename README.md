@@ -1,14 +1,14 @@
-# X-KANeRF: KAN-based NeRF with Different Basis Functions
+# X-KANeRF: KAN-based NeRF with Various Basis Functions
 
 ### Is there any basis function can explain the NeRF formula?! 
 $$\mathbf{c}, \sigma = F_{\Theta}(\mathbf{x}, \mathbf{d}),$$
  where $\mathbf{c}=(r,g,b)$ is RGB color, $\sigma$ is density, $\mathbf{x}$ is 3D position, $\mathbf{d}$ is the direction. 
 
-Thanks to the excellent work of [KANeRF](https://github.com/Tavish9/KANeRF), I utilize [Kolmogorov-Arnold Networks (KAN)](https://github.com/KindXiaoming/pykan) with different basis functions to fit the [NeRF](https://www.matthewtancik.com/nerf) equation based on [nerfstudio](https://github.com/nerfstudio-project/nerfstudio). 
+To explore this issue, I used [Kolmogorov-Arnold Networks (KAN)](https://github.com/KindXiaoming/pykan) with various basis functions to fit the [NeRF](https://www.matthewtancik.com/nerf) equation based on [nerfstudio](https://github.com/nerfstudio-project/nerfstudio). 
 
 ### The code might be a bit COARSE, any suggestions and criticisms are welcome!
 
-# [X-KAN Models](./xKANeRF/xKAN/)
+# [X-KAN Models](./xKANeRF/xKAN/) (Here are various KANs!)
 | TODO | Basis Functions | Mathtype | Acknowledgement|
 |:--------:|:---------:|:-------:|:------:|
 | √ | [B-Spline](https://en.wikipedia.org/wiki/B-spline) | $$S_i(x) = a_i + b_i(x - x_i) + c_i(x - x_i)^2 + d_i(x - x_i)^3$$| [Efficient-Kan](https://github.com/Blealtan/efficient-kan) |
@@ -51,8 +51,8 @@ Thanks to the excellent work of [KANeRF](https://github.com/Tavish9/KANeRF), I u
 |[Jacobi-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/jacobi_kan.py) | 3532 | ~72K | ~30m| 0.37 | 27.88 | 0.915 |0.0553|
 |[Bessel-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/bessel_kan.py) | 3532 | ~76K | ~28m| 0.33 | 25.79 | 0.878 |0.1156|
 |[2nd Chebyshev-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/chebyshev2_kan.py) | 4396 | ~55K | ~39m| 0.33 | 28.53 | 0.924 |0.0500|
-|[Fibonacci-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/fibonacci_kan.py) |  | ~65K | ~32m| 0. |  | 0. |0.|
-|[Gegenbauer-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/gegenbauer_kan.py) |  | ~K | ~m| 0. |  | 0. |0.|
+|[Fibonacci-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/fibonacci_kan.py) | 4396 | ~65K | ~32m| 0.34 | 28.30 | 0.922 |0.0521|
+|[Gegenbauer-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/gegenbauer_kan.py) |  | ~53K | ~40m| 0. |  | 0. |0.|
 |[Hermite-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/xKANeRF/xKAN/hermite_kan.py) |  | ~K | ~m| 0. |  | 0. |0.|
 |[Legendre-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/xKANeRF/xKAN/legendre_kan.py) |  | ~K | ~m| 0. |  | 0. |0.|
 
@@ -92,7 +92,7 @@ pip install opencv-python==4.3.0.36
 # mlp, bspline, grbf, rbf, fourier,
 # fcn, fcn_inter, chebyshev, jacobi
 # bessel, chebyshev2, finonacci, hermite
-# legendre
+# legendre, gegenbauer
 bash train_blender.sh
 ```
 
@@ -101,7 +101,7 @@ bash train_blender.sh
 
 
 # Acknowledgement
-- [KANeRF](https://github.com/Tavish9/KANeRF)
+- [KANeRF](https://github.com/Tavish9/KANeRF), A big thank you for this awesome work!
     ```bibtex
     @Manual{kanerf,
     title = {Hands-On NeRF with KAN},
