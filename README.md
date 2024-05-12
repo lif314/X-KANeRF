@@ -6,7 +6,7 @@ $$\mathbf{c}, \sigma = F_{\Theta}(\mathbf{x}, \mathbf{d}),$$
 
 Thanks to the excellent work of [KANeRF](https://github.com/Tavish9/KANeRF), I utilize [Kolmogorov-Arnold Networks (KAN)](https://github.com/KindXiaoming/pykan) with different basis functions to fit the [NeRF](https://www.matthewtancik.com/nerf) equation based on [nerfstudio](https://github.com/nerfstudio-project/nerfstudio). 
 
-### The code is very COARSE, welcome any suggestions and criticism!
+### The code might be a bit COARSE, any suggestions and criticisms are welcome!
 
 # [X-KAN Models](./xKANeRF/xKAN/)
 | TODO | Basis Functions | Mathtype | Acknowledgement|
@@ -50,8 +50,8 @@ Thanks to the excellent work of [KANeRF](https://github.com/Tavish9/KANeRF), I u
 |[1st Chebyshev-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/chebyshev_kan.py) | 4396 | ~53K | ~40m| 0.34 | 28.56| 0.924 | 0.0523 |
 |[Jacobi-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/jacobi_kan.py) | 3532 | ~72K | ~30m| 0.37 | 27.88 | 0.915 |0.0553|
 |[Bessel-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/bessel_kan.py) | 3532 | ~76K | ~28m| 0.33 | 25.79 | 0.878 |0.1156|
-|[2nd Chebyshev-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/chebyshev2_kan.py) |  | ~55K | ~39m| 0. |  | 0. |0.|
-|[Fibonacci-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/fibonacci_kan.py) |  | ~K | ~m| 0. |  | 0. |0.|
+|[2nd Chebyshev-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/chebyshev2_kan.py) | 4396 | ~55K | ~39m| 0.33 | 28.53 | 0.924 |0.0500|
+|[Fibonacci-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/fibonacci_kan.py) |  | ~65K | ~32m| 0. |  | 0. |0.|
 |[Gegenbauer-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/gegenbauer_kan.py) |  | ~K | ~m| 0. |  | 0. |0.|
 |[Hermite-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/xKANeRF/xKAN/hermite_kan.py) |  | ~K | ~m| 0. |  | 0. |0.|
 |[Legendre-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/xKANeRF/xKAN/legendre_kan.py) |  | ~K | ~m| 0. |  | 0. |0.|
