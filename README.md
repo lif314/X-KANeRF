@@ -27,11 +27,16 @@ Thanks to the excellent work of [KANeRF](https://github.com/Tavish9/KANeRF), I u
 
 # Performance Comparision on `RTX-3090`
 
+**Model Setting** -> [train_blender.sh](https://github.com/lif314/X-KANeRF/blob/main/train_blender.sh)
+|hidden_dim| hidden_dim_color |num_layers | num_layers_color | geo_feat_dim | appearance_embed_dim |
+|:---:|:---:|:----:|:----:|:-----:|:-----:|
+| 8 | 8 | 1 | 1 | 7 | 8|
+
 - `nerf_synthetic: lego / 30k`
 
 |Model| Params $\downarrow$ |Train Rays/Sec $\uparrow$ | Train Time $\downarrow$ | FPS $\uparrow$ | PSNR $\uparrow$| SSIM $\uparrow$ | LPIPS $\downarrow$ | 
 |:---:|:---:|:----:|:----:|:-----:|:-----:|:----:|:-----:|
-|[Nerfacto-MLP](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/nerfacto_mlp.py)| 8192 | ~200K | ~13m | 2.5| 33.69|0.973|0.0132|
+|[Nerfacto-MLP](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/nerfacto_mlp.py)| 456 | ~200K | ~13m | 1.09| 31.90 |0.961|0.0207|
 |[KAN: B-Spline](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/bspine_kan.py)|8092| ~37K | ~54 m|0.19|32.33|0.965|0.0174|
 |[KAN: G-RBF](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/grbf_kan.py)|3748 | ~115K | ~19 m |0.50|32.39|0.967|0.0172|
 |[KAN: RBF](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/rbf_kan.py)| 3512 | ~140K | ~15m |0.71|32.57|0.966| 0.0177|
@@ -69,6 +74,14 @@ ns-install-cli
 
 # !!! If you use `ns-process-data`, please install this version opencv
 pip install opencv-python==4.3.0.36
+```
+
+# Run
+```bash
+############# kan_basis_type #############
+# 'mlp', 'bspline', 'grbf', 'rbf', 'fourier', 
+# 'fcn', 'fcn_inter' 'chebyshev', 'jacobi'
+bash train_blender.sh
 ```
 
 # Docs
