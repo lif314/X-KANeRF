@@ -47,10 +47,10 @@ Thanks to the excellent work of [KANeRF](https://github.com/Tavish9/KANeRF), I u
 |[Fourier-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/fourier_kan.py)| 5222 | ~80K | ~25 m |0.42 | 31.72 |0.956|0.0241|
 |[FCN-KAN(Iters: 4k)](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/fcn_kan.py)| 5184 | ~4K | ~90m | 0.02 | 29.67 | 0.938 | 0.0401 |
 |[FCN-Interpolation-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/fcn_kan.py)| 6912 | ~52K | ~40m| 0.21 | 32.67 | 0.965 | 0.0187 |
-|[1st Chebyshev-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/chebyshev_kan.py) | 4396 | ~53k | ~40m| 0.34 | 28.56| 0.924 | 0.0523 |
-|[Jacobi-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/jacobi_kan.py) | 3532 | ~72k | ~30m| 0.37 | 27.88 | 0.915 |0.0553|
-|[Bessel-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/bessel_kan.py) |  | ~K | ~m| 0. |  | 0. |0.|
-|[2nd Chebyshev-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/chebyshev2_kan.py) |  | ~K | ~m| 0. |  | 0. |0.|
+|[1st Chebyshev-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/chebyshev_kan.py) | 4396 | ~53K | ~40m| 0.34 | 28.56| 0.924 | 0.0523 |
+|[Jacobi-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/jacobi_kan.py) | 3532 | ~72K | ~30m| 0.37 | 27.88 | 0.915 |0.0553|
+|[Bessel-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/bessel_kan.py) | 3532 | ~76K | ~28m| 0.33 | 25.79 | 0.878 |0.1156|
+|[2nd Chebyshev-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/chebyshev2_kan.py) |  | ~55K | ~39m| 0. |  | 0. |0.|
 |[Fibonacci-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/fibonacci_kan.py) |  | ~K | ~m| 0. |  | 0. |0.|
 |[Gegenbauer-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/gegenbauer_kan.py) |  | ~K | ~m| 0. |  | 0. |0.|
 |[Hermite-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/xKANeRF/xKAN/hermite_kan.py) |  | ~K | ~m| 0. |  | 0. |0.|

@@ -12,7 +12,7 @@ start_timestamp=$(date -d "$start_time" +%s)
 # fcn, fcn_inter, chebyshev, jacobi
 # bessel, chebyshev2, finonacci, hermite
 # legendre
-kan_basis_type='mlp'  # `mlp` refers to nerfacto with torch MLP, no tcnn
+kan_basis_type='chebyshev2'  # `mlp` refers to nerfacto with torch MLP, no tcnn
 ns-train xkanerf --data data/nerf_synthetic/lego \
     --experiment-name "$kan_basis_type-blender-lego" \
     --pipeline.model.kan_basis_type $kan_basis_type \
