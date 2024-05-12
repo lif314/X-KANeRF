@@ -26,5 +26,20 @@ def get_kan_model(kan_basis_type='bspline'):
     elif kan_basis_type == 'jacobi':
         from xKANeRF.xKAN.jacobi_kan import Jacobi_KAN
         return Jacobi_KAN
+    elif kan_basis_type == 'bessel':
+        from xKANeRF.xKAN.bessel_kan import Bessel_KAN
+        return Bessel_KAN
+    elif kan_basis_type == 'chebyshev2':
+        from xKANeRF.xKAN.chebyshev2_kan import Chebyshev2_KAN
+        return Chebyshev2_KAN
+    elif kan_basis_type == 'finonacci':
+        from xKANeRF.xKAN.fibonacci_kan import Fibonacci_KAN
+        return Fibonacci_KAN
+    elif kan_basis_type == 'hermite':
+        from xKANeRF.xKAN.hermite_kan import Hermite_KAN
+        return Hermite_KAN
+    elif kan_basis_type == 'legendre':
+        from xKANeRF.xKAN.legendre_kan import Legendre_kan
+        return Legendre_kan
     else:
         print("Not Implemented!!!")

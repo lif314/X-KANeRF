@@ -8,8 +8,10 @@ start_timestamp=$(date -d "$start_time" +%s)
 # export CUDA_VISIBLE_DEVICES=1
 
 ############# kan_basis_type #############
-# 'mlp', 'bspline', 'grbf', 'rbf', 'fourier', 'fcn', 'fcn_inter'
-# 'chebyshev', 'jacobi'
+# mlp, bspline, grbf, rbf, fourier,
+# fcn, fcn_inter, chebyshev, jacobi
+# bessel, chebyshev2, finonacci, hermite
+# legendre
 kan_basis_type='mlp'  # `mlp` refers to nerfacto with torch MLP, no tcnn
 ns-train xkanerf --data data/nerf_synthetic/lego \
     --experiment-name "$kan_basis_type-blender-lego" \
