@@ -23,6 +23,7 @@ Thanks to the excellent work of [KANeRF](https://github.com/Tavish9/KANeRF), I u
 | - | [Gegenbauer polynomials](https://en.wikipedia.org/wiki/Gegenbauer_polynomials) | -  | - |
 | - | [Legendre polynomials](https://en.wikipedia.org/wiki/Legendre_polynomials) | -  | - |
 | - | [Laguerre polynomials](https://en.wikipedia.org/wiki/Laguerre_polynomials) | - | -|
+| More and More!!! | - | - | -|
 
 
 # Performance Comparision on `RTX-3090`
