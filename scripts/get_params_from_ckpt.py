@@ -29,9 +29,8 @@ def count_parameters(obj, prefix=''):
 
     return {'total': total_params, 'trainable': trainable_params, 'non_trainable': non_trainable_params}
 
-
+# I'm not sure if this calculation is actually correct and need help!
 if __name__ == '__main__':
-    # 获取命令行参数
     if len(sys.argv) < 2:
         print("Usage: python script.py <checkpoint_path>")
         sys.exit(1)

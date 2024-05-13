@@ -14,7 +14,7 @@ To explore this issue, I used [Kolmogorov-Arnold Networks (KAN)](https://github.
 | √ | [B-Spline](https://en.wikipedia.org/wiki/B-spline) | $$S_i(x) = a_i + b_i(x - x_i) + c_i(x - x_i)^2 + d_i(x - x_i)^3$$| [Efficient-Kan](https://github.com/Blealtan/efficient-kan) |
 | √ | [Fourier](https://en.wikipedia.org/wiki/Fourier_transform) | $$\phi_k(x) = \sin(2\pi kx), \phi_k(x) = \cos(2\pi kx)$$ | [FourierKAN](https://github.com/GistNoesis/FourierKAN/) |
 | √ | [Gaussian RBF](https://en.wikipedia.org/wiki/Radial_basis_function_kernel) | $$\phi(x, c) = e^{-\frac{\|x - c\|^2}{2\sigma^2}}$$| [FastKAN](https://github.com/ZiyaoLi/fast-kan) |
-| √ | [Radial Basis Function](https://en.wikipedia.org/wiki/Radial_basis_function) | $$\phi(x, c) = f(\|x - c\|)$$ | [RGFKAN](https://github.com/sidhu2690/RBF-KAN) |
+| √ | [Radial Basis Function](https://en.wikipedia.org/wiki/Radial_basis_function) | $$\phi(x, c) = f(\|x - c\|)$$ | [RBFKAN](https://github.com/sidhu2690/RBF-KAN) |
 | √ | FCN | - | [FCN-KAN](https://github.com/Zhangyanbo/FCN-KAN) |
 | √ | FCN-Interpolation | - | [FCN-KAN](https://github.com/Zhangyanbo/FCN-KAN) |
 | √ | [1st Chebyshev Polynomials](https://en.wikipedia.org/wiki/Chebyshev_polynomials) | $$T_n(x) = \cos(n \cos^{-1}(x))$$ | [ChebyKAN](https://github.com/SynodicMonth/ChebyKAN) |
@@ -37,10 +37,11 @@ To explore this issue, I used [Kolmogorov-Arnold Networks (KAN)](https://github.
 | 8 | 8 | 1 | 1 | 7 | 8|
 
 - `nerf_synthetic: lego / 30k`
+> Note, the `Nerfacto-MLP` model utilizes only 3 MLP layers instead of 8. There might be a bug as the previous test results were better with 1 MLP layer. I will review the code to investigate the issue.
 
 |Model| Layer Params $\downarrow$ |Train Rays/Sec $\uparrow$ | Train Time $\downarrow$ | FPS $\uparrow$ | PSNR $\uparrow$| SSIM $\uparrow$ | LPIPS $\downarrow$ | 
 |:---:|:---:|:----:|:----:|:-----:|:-----:|:----:|:-----:|
-|[Nerfacto-MLP](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/nerfacto_mlp.py)| 456 | ~200K | ~13m | 1.09| 31.90 |0.961|0.0207|
+|[Nerfacto-MLP](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/nerfacto_mlp.py)| 1118 | ~190K | ~13m | 0.99| 28.60 |0.952 |0.0346 |
 |[BSplines-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/bspine_kan.py)|8092| ~37K | ~54 m|0.19|32.33|0.965|0.0174|
 |[GRBF-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/grbf_kan.py)|3748 | ~115K | ~19 m |0.50|32.39|0.967|0.0172|
 |[RBF-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/rbf_kan.py)| 3512 | ~140K | ~15m |0.71|32.57|0.966| 0.0177|
@@ -52,15 +53,15 @@ To explore this issue, I used [Kolmogorov-Arnold Networks (KAN)](https://github.
 |[Bessel-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/bessel_kan.py) | 3532 | ~76K | ~28m| 0.33 | 25.79 | 0.878 |0.1156|
 |[2nd Chebyshev-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/chebyshev2_kan.py) | 4396 | ~55K | ~39m| 0.33 | 28.53 | 0.924 |0.0500|
 |[Fibonacci-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/fibonacci_kan.py) | 4396 | ~65K | ~32m| 0.34 | 28.30 | 0.922 |0.0521|
-|[Gegenbauer-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/gegenbauer_kan.py) |  | ~53K | ~40m| 0. |  | 0. |0.|
-|[Hermite-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/xKANeRF/xKAN/hermite_kan.py) |  | ~K | ~m| 0. |  | 0. |0.|
-|[Legendre-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/xKANeRF/xKAN/legendre_kan.py) |  | ~K | ~m| 0. |  | 0. |0.|
+|[Gegenbauer-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/gegenbauer_kan.py) | 4396 | ~53K | ~40m| 0.32 |  28.39| 0.922 |0.0514|
+|[Hermite-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/xKANeRF/xKAN/hermite_kan.py) | 4396 | ~55K | ~38m| 0.37 | 27.58 | 0.913 |0.0591|
+|[Legendre-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/xKANeRF/xKAN/legendre_kan.py) | 4396 | ~55K | ~38m| 0.33 | 26.64 | 0.893 |0.0986|
 
 
 - `360_v2: garden / 30k`, todo
 
 
-# Installation
+# [Nerfstudio Installation](https://docs.nerf.studio/quickstart/installation.html)
 ```bash
 # create python env
 conda create --name nerfstudio -y python=3.8

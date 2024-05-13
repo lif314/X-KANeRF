@@ -31,7 +31,7 @@ class Nefacto_MLP(nn.Module):
         self.in_dim = layers_hidden[0]
         assert self.in_dim > 0
         self.out_dim = layers_hidden[-1]
-        self.num_layers = len(layers_hidden) - 2
+        self.num_layers = len(layers_hidden)
         self.layer_width = layers_hidden[1] # hidden_dim
         # self.layer_width = layer_width # hidden_dim
         self.skip_connections = skip_connections
