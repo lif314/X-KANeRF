@@ -57,8 +57,8 @@ Others| 8 | 8 | 1 | 1 | 7 | 8|
 |[2nd Chebyshev-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/chebyshev2_kan.py) | 4396 | ~55K | ~39m| 0.33 | 28.53 | 0.924 |0.0500|
 |[Fibonacci-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/fibonacci_kan.py) | 4396 | ~65K | ~32m| 0.34 | 28.30 | 0.922 |0.0521|
 |[Gegenbauer-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/gegenbauer_kan.py) | 4396 | ~53K | ~40m| 0.32 |  28.39| 0.922 |0.0514|
-|[Hermite-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/xKANeRF/xKAN/hermite_kan.py) | 4396 | ~55K | ~38m| 0.37 | 27.58 | 0.913 |0.0591|
-|[Legendre-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/xKANeRF/xKAN/legendre_kan.py) | 4396 | ~55K | ~38m| 0.33 | 26.64 | 0.893 |0.0986|
+|[Hermite-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/hermite_kan.py) | 4396 | ~55K | ~38m| 0.37 | 27.58 | 0.913 |0.0591|
+|[Legendre-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/legendre_kan.py) | 4396 | ~55K | ~38m| 0.33 | 26.64 | 0.893 |0.0986|
 
 
 - `360_v2: garden / 30k`, todo
