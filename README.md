@@ -1,4 +1,4 @@
-# X-KANeRF: KAN-based NeRF with Various Basis Functions
+# X-KANeRF [KANeRF-benchmarking]: KAN-based NeRF with Various Basis Functions
 
 ### Is there any basis function can explain the NeRF formula?! 
 $$\mathbf{c}, \sigma = F_{\Theta}(\mathbf{x}, \mathbf{d}),$$
