@@ -35,7 +35,8 @@ To explore this issue, I used [Kolmogorov-Arnold Networks (KAN)](https://github.
 
 |Model|hidden_dim| hidden_dim_color | num_layers | num_layers_color | geo_feat_dim | appearance_embed_dim |
 |:----:|:---:|:---:|:----:|:----:|:-----:|:-----:|
-Nefacto-MLP-Big| 8 | 8 | 8 | 8 | 7 | 8 |
+Nefacto-MLP-A| 32 | 32 | 2 | 2 | 7 | 8 |
+Nefacto-MLP-B| 8 | 8 | 8 | 8 | 7 | 8 |
 Others| 8 | 8 | 1 | 1 | 7 | 8|
 
 
@@ -43,7 +44,8 @@ Others| 8 | 8 | 1 | 1 | 7 | 8|
 
 |Model| Layer Params $\downarrow$ |Train Rays/Sec $\uparrow$ | Train Time $\downarrow$ | FPS $\uparrow$ | PSNR $\uparrow$| SSIM $\uparrow$ | LPIPS $\downarrow$ | 
 |:---:|:---:|:----:|:----:|:-----:|:-----:|:----:|:-----:|
-|[Nerfacto-MLP](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/nerfacto_mlp.py)-Big| 3382 | ~165K | ~14m | 0.75 | 27.11 | 0.915 | 0.0621 |
+|[Nerfacto-MLP](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/nerfacto_mlp.py)-A| 9902 | ~170K | ~14m | 0.71 | 32.53 | 0.968 | 0.0167 |
+|[Nerfacto-MLP](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/nerfacto_mlp.py)-B | 3382 | ~165K | ~14m | 0.75 | 27.11 | 0.915 | 0.0621 |
 |[Nerfacto-MLP](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/nerfacto_mlp.py)| 1118 | ~190K | ~13m | 0.99| 28.60 |0.952 |0.0346 |
 |[BSplines-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/bspine_kan.py)|8092| ~37K | ~54 m|0.19|32.33|0.965|0.0174|
 |[GRBF-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/grbf_kan.py)|3748 | ~115K | ~19 m |0.50|32.39|0.967|0.0172|

@@ -15,10 +15,10 @@ ns-train xkanerf --data data/nerf_synthetic/lego \
     --pipeline.model.proposal-initial-sampler uniform \
     --pipeline.model.near-plane 2. \
     --pipeline.model.far-plane 6. \
-    --pipeline.model.hidden_dim 8 \
-    --pipeline.model.hidden_dim_color 8 \
-    --pipeline.model.num_layers 1 \
-    --pipeline.model.num_layers_color 1 \
+    --pipeline.model.hidden_dim 32 \
+    --pipeline.model.hidden_dim_color 32 \
+    --pipeline.model.num_layers 2 \
+    --pipeline.model.num_layers_color 2 \
     --pipeline.model.geo_feat_dim 7 \
     --pipeline.model.appearance_embed_dim 8 \
     --pipeline.datamanager.camera-optimizer.mode off \
