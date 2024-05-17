@@ -105,6 +105,8 @@ bash train_blender.sh
 # Docs
 - [Universal Approximation Theorem vs. Kolmogorov–Arnold Theorem](docs/Theorem.md)
 
+# [PAPER](https://github.com/lif314/X-KANeRF)
+COMMING SOON! We will provide a more detailed discussion of the impact of KAN on NeRF in our paper, including KANeRF-based SLAM.
 
 # Acknowledgement
 - [KANeRF](https://github.com/Tavish9/KANeRF), A big thank you for this awesome work!
