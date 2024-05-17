@@ -108,14 +108,25 @@ bash train_blender.sh
 # [PAPER](https://github.com/lif314/X-KANeRF)
 COMMING SOON! We will provide a more detailed discussion of the impact of KAN on NeRF in our paper, including KANeRF-based SLAM.
 
+# Citation
+If you use this benchmark in your research, please cite this project.
+```bibtex
+@misc{xkanerf,
+	title={X-KANeRF: KAN-based NeRF with Various Basis Functions},
+	author={Linfei Li},
+	howpublished = {\url{https://github.com/lif314/X-KANeRF}},
+	year={2024}
+}
+```
+
 # Acknowledgement
 - [KANeRF](https://github.com/Tavish9/KANeRF), A big thank you for this awesome work!
     ```bibtex
     @Manual{kanerf,
-    title = {Hands-On NeRF with KAN},
-    author = {Delin Qu, Qizhi Chen},
-    year = {2024},
-    url = {https://github.com/Tavish9/KANeRF},
+		title = {Hands-On NeRF with KAN},
+		author = {Delin Qu, Qizhi Chen},
+		year = {2024},
+		url = {https://github.com/Tavish9/KANeRF},
     }
     ```
 - [nerfstudio](https://github.com/nerfstudio-project/nerfstudio)
