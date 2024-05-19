@@ -23,9 +23,10 @@ To explore this issue, I used [Kolmogorov-Arnold Networks (KAN)](https://github.
 | √ | [Hermite polynomials](https://en.wikipedia.org/wiki/Hermite_polynomials)  | $$H_n(x) = (-1)^n e^{x^2} \frac{d^n}{dx^n}(e^{-x^2})$$  | [OrthogPolyKANs](https://github.com/Boris-73-TA/OrthogPolyKANs) |
 | √ | [Gegenbauer polynomials](https://en.wikipedia.org/wiki/Gegenbauer_polynomials) |$$C_{n+1}^{(\lambda)}(x) = \frac{2(n+\lambda)}{n+1}x C_n^{(\lambda)}(x) - \frac{(n+2\lambda-1)}{n+1}C_{n-1}^{(\lambda)}(x)$$| [OrthogPolyKANs](https://github.com/Boris-73-TA/OrthogPolyKANs) |
 | √ | [Legendre polynomials](https://en.wikipedia.org/wiki/Legendre_polynomials) | $$P_n(x) = \frac{1}{2^n n!} \frac{d^n}{dx^n} \left( x^2 - 1 \right)^n$$  | [OrthogPolyKANs](https://github.com/Boris-73-TA/OrthogPolyKANs) |
-| - | [Laguerre polynomials](https://en.wikipedia.org/wiki/Laguerre_polynomials) | $$L_n(x) = \frac{e^x}{n!} \frac{d^n}{dx^n} \left( x^n e^{-x} \right)$$ | [OrthogPolyKANs](https://github.com/Boris-73-TA/OrthogPolyKANs) |
+| √ | [Laguerre polynomials](https://en.wikipedia.org/wiki/Laguerre_polynomials) | $$L_n(x) = \frac{e^x}{n!} \frac{d^n}{dx^n} \left( x^n e^{-x} \right)$$ | [OrthogPolyKANs](https://github.com/Boris-73-TA/OrthogPolyKANs) |
 | √ | [Bessel polynomials](https://en.wikipedia.org/wiki/Bessel_polynomials)  | $$J_n(x) = \sum_{k=0}^{\infty} \frac{(-1)^k}{k!(n+k)!} \left( \frac{x}{2} \right)^{2k+n}$$  | [OrthogPolyKANs](https://github.com/Boris-73-TA/OrthogPolyKANs) |
 | √ | [Fibonacci polynomials](https://en.wikipedia.org/wiki/Fibonacci_polynomials) | $$F_n(x) = xF_{n-1}(x) + F_{n-2}(x), \quad \text{for } n \geq 2.$$ | [OrthogPolyKANs](https://github.com/Boris-73-TA/OrthogPolyKANs) |
+| √ | [Lucas polynomials](https://en.wikipedia.org/wiki/Fibonacci_polynomials) | $$L_n(x) = xL_{n-1}(x) + L_{n-2}(x)$$ | [OrthogPolyKANs](https://github.com/Boris-73-TA/OrthogPolyKANs) |
 | More and More!!! | - | - | -|
 
 
@@ -41,6 +42,7 @@ Others| 8 | 8 | 1 | 1 | 7 | 8|
 
 
 - `nerf_synthetic: lego / 30k`
+> Note that the current `Train Rays/Sec` and `Train Time(ETA Time)` are not accurate, they are the values ​​when the number of iterations reaches 100.
 
 |Model| Layer Params $\downarrow$ |Train Rays/Sec $\uparrow$ | Train Time $\downarrow$ | FPS $\uparrow$ | PSNR $\uparrow$| SSIM $\uparrow$ | LPIPS $\downarrow$ | 
 |:---:|:---:|:----:|:----:|:-----:|:-----:|:----:|:-----:|
@@ -61,6 +63,9 @@ Others| 8 | 8 | 1 | 1 | 7 | 8|
 |[Gegenbauer-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/gegenbauer_kan.py) | 4396 | ~53K | ~40m| 0.32 |  28.39| 0.922 |0.0514|
 |[Hermite-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/hermite_kan.py) | 4396 | ~55K | ~38m| 0.37 | 27.58 | 0.913 |0.0591|
 |[Legendre-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/legendre_kan.py) | 4396 | ~55K | ~38m| 0.33 | 26.64 | 0.893 |0.0986|
+|[Lucas-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/lucas_kan.py) | 3532 | ~75K | ~28m | 0.42 | 27.95 | 0.916 |0.0550 |
+|[Laguerre-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/laguerre_kan.py) | 3532 | ~74K | ~28m | 0.39 | 27.39 | 0.912 |0.0593 |
+
 
 
 - `360_v2: garden / 30k`, todo
@@ -94,12 +99,19 @@ pip install opencv-python==4.3.0.36
 
 # Run
 ```bash
+# Train
 ############# kan_basis_type #############
 # mlp, bspline, grbf, rbf, fourier,
 # fcn, fcn_inter, chebyshev, jacobi
 # bessel, chebyshev2, finonacci, hermite
-# legendre, gegenbauer
-bash train_blender.sh
+# legendre, gegenbauer, lucas, laguerre
+bash train_blender.sh [kan_basis_type]
+
+# eval
+bash run_eval.sh [exp_path]
+
+# render RGB & Depth
+bash run_render.sh [exp_path]
 ```
 
 # Docs

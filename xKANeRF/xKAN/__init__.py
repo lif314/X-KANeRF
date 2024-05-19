@@ -44,5 +44,11 @@ def get_kan_model(kan_basis_type='bspline'):
     elif kan_basis_type == 'gegenbauer':
         from xKANeRF.xKAN.gegenbauer_kan import Gegenbauer_KAN
         return Gegenbauer_KAN
+    elif kan_basis_type == 'lucas':
+        from xKANeRF.xKAN.lucas_kan import Lucas_KAN
+        return Lucas_KAN
+    elif kan_basis_type == 'laguerre':
+        from xKANeRF.xKAN.laguerre_kan import Laguerre_KAN
+        return Laguerre_KAN
     else:
         print("Not Implemented!!!")
