@@ -76,10 +76,7 @@ Others| 8 | 8 | 1 | 1 | 7 | 8|
 |[DoG-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/wav_kan.py) |3614 | ~75K | ~28m | 0.41 | 32.59 | 0.966  | 0.0174 |
 |[Meyer-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/wav_kan.py) | 3614 | ~36K | ~55m | 0.17 | 11.91 | 0.728 | 0.2991 |
 |[Shannon-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/wav_kan.py) | 3614 | ~73K | ~28m | 0.49 | 9.15 | 0.738 |0.4434 |
-|[Bump-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/wav_kan.py) | × | × |  × | × | × | × | × |
-
-- `360_v2: garden / 30k`, todo
-
+|[Bump-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/wav_kan.py) | 3614 | ~70K |  ~28m | 0.33 | 1.79 | 0.147 | 0.9072 |
 
 # [Nerfstudio Installation](https://docs.nerf.studio/quickstart/installation.html)
 ```bash
