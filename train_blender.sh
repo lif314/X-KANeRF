@@ -12,6 +12,7 @@ start_timestamp=$(date -d "$start_time" +%s)
 # fcn, fcn_inter, chebyshev, jacobi
 # bessel, chebyshev2, finonacci, hermite
 # legendre, gegenbauer, lucas, laguerre
+# mexican_hat, morlet, dog, meyer, shannon, bump
 kan_basis_type=$1  # `mlp` refers to nerfacto with torch MLP, no tcnn
 # kan_basis_type='mlp'
 ns-train xkanerf --data data/nerf_synthetic/lego \

@@ -11,22 +11,28 @@ To explore this issue, I used [Kolmogorov-Arnold Networks (KAN)](https://github.
 # [X-KAN Models](./xKANeRF/xKAN/) (Here are various KANs!)
 | TODO | Basis Functions | Mathtype | Acknowledgement|
 |:--------:|:---------:|:-------:|:------:|
-| √ | [B-Spline](https://en.wikipedia.org/wiki/B-spline) | $$S_i(x) = a_i + b_i(x - x_i) + c_i(x - x_i)^2 + d_i(x - x_i)^3$$| [Efficient-Kan](https://github.com/Blealtan/efficient-kan) |
-| √ | [Fourier](https://en.wikipedia.org/wiki/Fourier_transform) | $$\phi_k(x) = \sin(2\pi kx), \phi_k(x) = \cos(2\pi kx)$$ | [FourierKAN](https://github.com/GistNoesis/FourierKAN/) |
-| √ | [Gaussian RBF](https://en.wikipedia.org/wiki/Radial_basis_function_kernel) | $$\phi(x, c) = e^{-\frac{\|x - c\|^2}{2\sigma^2}}$$| [FastKAN](https://github.com/ZiyaoLi/fast-kan) |
-| √ | [Radial Basis Function](https://en.wikipedia.org/wiki/Radial_basis_function) | $$\phi(x, c) = f(\|x - c\|)$$ | [RBFKAN](https://github.com/sidhu2690/RBF-KAN) |
-| √ | FCN | - | [FCN-KAN](https://github.com/Zhangyanbo/FCN-KAN) |
-| √ | FCN-Interpolation | - | [FCN-KAN](https://github.com/Zhangyanbo/FCN-KAN) |
-| √ | [1st Chebyshev Polynomials](https://en.wikipedia.org/wiki/Chebyshev_polynomials) | $$T_n(x) = \cos(n \cos^{-1}(x))$$ | [ChebyKAN](https://github.com/SynodicMonth/ChebyKAN) |
-| √ | [2nd-Chebyshev Polynomials](https://en.wikipedia.org/wiki/Chebyshev_polynomials) | $$U_n(x) = \frac{\sin((n+1)\cos^{-1}(x))}{\sin(\cos^{-1}(x))}$$ | [OrthogPolyKANs](https://github.com/Boris-73-TA/OrthogPolyKANs) |
-| √ | [Jacobi polynomials](https://en.wikipedia.org/wiki/Jacobi_polynomials) | $$P_n^{(\alpha, \beta)}(x) = \frac{1}{2^n n!} \frac{d^n}{dx^n} \left[ (1-x)^{\alpha+n} (1+x)^{\beta+n} \right]$$ | [JacobiKAN](https://github.com/SpaceLearner/JacobiKAN) |
-| √ | [Hermite polynomials](https://en.wikipedia.org/wiki/Hermite_polynomials)  | $$H_n(x) = (-1)^n e^{x^2} \frac{d^n}{dx^n}(e^{-x^2})$$  | [OrthogPolyKANs](https://github.com/Boris-73-TA/OrthogPolyKANs) |
-| √ | [Gegenbauer polynomials](https://en.wikipedia.org/wiki/Gegenbauer_polynomials) |$$C_{n+1}^{(\lambda)}(x) = \frac{2(n+\lambda)}{n+1}x C_n^{(\lambda)}(x) - \frac{(n+2\lambda-1)}{n+1}C_{n-1}^{(\lambda)}(x)$$| [OrthogPolyKANs](https://github.com/Boris-73-TA/OrthogPolyKANs) |
-| √ | [Legendre polynomials](https://en.wikipedia.org/wiki/Legendre_polynomials) | $$P_n(x) = \frac{1}{2^n n!} \frac{d^n}{dx^n} \left( x^2 - 1 \right)^n$$  | [OrthogPolyKANs](https://github.com/Boris-73-TA/OrthogPolyKANs) |
-| √ | [Laguerre polynomials](https://en.wikipedia.org/wiki/Laguerre_polynomials) | $$L_n(x) = \frac{e^x}{n!} \frac{d^n}{dx^n} \left( x^n e^{-x} \right)$$ | [OrthogPolyKANs](https://github.com/Boris-73-TA/OrthogPolyKANs) |
-| √ | [Bessel polynomials](https://en.wikipedia.org/wiki/Bessel_polynomials)  | $$J_n(x) = \sum_{k=0}^{\infty} \frac{(-1)^k}{k!(n+k)!} \left( \frac{x}{2} \right)^{2k+n}$$  | [OrthogPolyKANs](https://github.com/Boris-73-TA/OrthogPolyKANs) |
-| √ | [Fibonacci polynomials](https://en.wikipedia.org/wiki/Fibonacci_polynomials) | $$F_n(x) = xF_{n-1}(x) + F_{n-2}(x), \quad \text{for } n \geq 2.$$ | [OrthogPolyKANs](https://github.com/Boris-73-TA/OrthogPolyKANs) |
-| √ | [Lucas polynomials](https://en.wikipedia.org/wiki/Fibonacci_polynomials) | $$L_n(x) = xL_{n-1}(x) + L_{n-2}(x)$$ | [OrthogPolyKANs](https://github.com/Boris-73-TA/OrthogPolyKANs) |
+| 1 | [B-Spline](https://en.wikipedia.org/wiki/B-spline) | $$S_i(x) = a_i + b_i(x - x_i) + c_i(x - x_i)^2 + d_i(x - x_i)^3$$| [Efficient-Kan](https://github.com/Blealtan/efficient-kan) |
+| 2 | [Fourier](https://en.wikipedia.org/wiki/Fourier_transform) | $$\phi_k(x) = \sin(2\pi kx), \phi_k(x) = \cos(2\pi kx)$$ | [FourierKAN](https://github.com/GistNoesis/FourierKAN/) |
+| 3 | [Gaussian RBF](https://en.wikipedia.org/wiki/Radial_basis_function_kernel) | $$\phi(x, c) = e^{-\frac{\|x - c\|^2}{2\sigma^2}}$$| [FastKAN](https://github.com/ZiyaoLi/fast-kan) |
+| 4 | [Radial Basis Function](https://en.wikipedia.org/wiki/Radial_basis_function) | $$\phi(x, c) = f(\|x - c\|)$$ | [RBFKAN](https://github.com/sidhu2690/RBF-KAN) |
+| 5 | FCN | - | [FCN-KAN](https://github.com/Zhangyanbo/FCN-KAN) |
+| 6 | FCN-Interpolation | - | [FCN-KAN](https://github.com/Zhangyanbo/FCN-KAN) |
+| 7 | [1st Chebyshev Polynomials](https://en.wikipedia.org/wiki/Chebyshev_polynomials) | $$T_n(x) = \cos(n \cos^{-1}(x))$$ | [ChebyKAN](https://github.com/SynodicMonth/ChebyKAN) |
+| 8 | [2nd-Chebyshev Polynomials](https://en.wikipedia.org/wiki/Chebyshev_polynomials) | $$U_n(x) = \frac{\sin((n+1)\cos^{-1}(x))}{\sin(\cos^{-1}(x))}$$ | [OrthogPolyKANs](https://github.com/Boris-73-TA/OrthogPolyKANs) |
+| 9 | [Jacobi polynomials](https://en.wikipedia.org/wiki/Jacobi_polynomials) | $$P_n^{(\alpha, \beta)}(x) = \frac{1}{2^n n!} \frac{d^n}{dx^n} \left[ (1-x)^{\alpha+n} (1+x)^{\beta+n} \right]$$ | [JacobiKAN](https://github.com/SpaceLearner/JacobiKAN) |
+| 10 | [Hermite polynomials](https://en.wikipedia.org/wiki/Hermite_polynomials)  | $$H_n(x) = (-1)^n e^{x^2} \frac{d^n}{dx^n}(e^{-x^2})$$  | [OrthogPolyKANs](https://github.com/Boris-73-TA/OrthogPolyKANs) |
+| 11 | [Gegenbauer polynomials](https://en.wikipedia.org/wiki/Gegenbauer_polynomials) |$$C_{n+1}^{(\lambda)}(x) = \frac{2(n+\lambda)}{n+1}x C_n^{(\lambda)}(x) - \frac{(n+2\lambda-1)}{n+1}C_{n-1}^{(\lambda)}(x)$$| [OrthogPolyKANs](https://github.com/Boris-73-TA/OrthogPolyKANs) |
+| 12 | [Legendre polynomials](https://en.wikipedia.org/wiki/Legendre_polynomials) | $$P_n(x) = \frac{1}{2^n n!} \frac{d^n}{dx^n} \left( x^2 - 1 \right)^n$$  | [OrthogPolyKANs](https://github.com/Boris-73-TA/OrthogPolyKANs) |
+| 13 | [Laguerre polynomials](https://en.wikipedia.org/wiki/Laguerre_polynomials) | $$L_n(x) = \frac{e^x}{n!} \frac{d^n}{dx^n} \left( x^n e^{-x} \right)$$ | [OrthogPolyKANs](https://github.com/Boris-73-TA/OrthogPolyKANs) |
+| 14 | [Bessel polynomials](https://en.wikipedia.org/wiki/Bessel_polynomials)  | $$J_n(x) = \sum_{k=0}^{\infty} \frac{(-1)^k}{k!(n+k)!} \left( \frac{x}{2} \right)^{2k+n}$$  | [OrthogPolyKANs](https://github.com/Boris-73-TA/OrthogPolyKANs) |
+| 15 | [Fibonacci polynomials](https://en.wikipedia.org/wiki/Fibonacci_polynomials) | $$F_n(x) = xF_{n-1}(x) + F_{n-2}(x), \quad \text{for } n \geq 2.$$ | [OrthogPolyKANs](https://github.com/Boris-73-TA/OrthogPolyKANs) |
+| 16 | [Lucas polynomials](https://en.wikipedia.org/wiki/Fibonacci_polynomials) | $$L_n(x) = xL_{n-1}(x) + L_{n-2}(x)$$ | [OrthogPolyKANs](https://github.com/Boris-73-TA/OrthogPolyKANs) |
+|  17 | [Mexican hat wavelet](https://en.wikipedia.org/wiki/Ricker_wavelet) | $$\psi(x) = \frac{2}{\sqrt{3a}\pi^{\frac{1}{4}}} \left(1 - \frac{x^2}{a^2}\right) e^{-\frac{x^2}{2a^2}}$$ | [Wav-KAN](https://github.com/zavareh1/Wav-KAN)|
+|  18 | [Morlet wavelet (Gabor wavelet)](https://en.wikipedia.org/wiki/Morlet_wavelet) |  $$\psi(t) = \pi^{-\frac{1}{4}} e^{i\omega_0 t} e^{-\frac{t^2}{2}}$$| [Wav-KAN](https://github.com/zavareh1/Wav-KAN)|
+|  19 | [Difference of Gaussians(DoG)](https://en.wikipedia.org/wiki/Difference_of_Gaussians) |  $$\text{DoG}(x, y) = \frac{1}{\sqrt{2\pi}\sigma_1} e^{-\frac{x^2 + y^2}{2\sigma_1^2}} - \frac{1}{\sqrt{2\pi}\sigma_2} e^{-\frac{x^2 + y^2}{2\sigma_2^2}}$$| [Wav-KAN](https://github.com/zavareh1/Wav-KAN)|
+|  20 | [Meyer wavelet](https://en.wikipedia.org/wiki/Meyer_wavelet) |  $$\psi(x) = \sqrt{\frac{2}{T}} \sum_{k=1}^{N} \left(1 - \left(\frac{k}{N}\right)^2\right) \left[ \cos\left(\frac{2\pi x k}{T}\right) - \frac{\sin(\pi x k / T)}{\pi x k / T}\right]$$| [Wav-KAN](https://github.com/zavareh1/Wav-KAN)|
+|  21  | [Shannon wavelet](https://en.wikipedia.org/wiki/Shannon_wavelet) |  $$\psi(t) = \frac{\sin(\pi t) - \sin\left(\frac{\pi t}{2}\right)}{\pi t}$$| [Wav-KAN](https://github.com/zavareh1/Wav-KAN)|
+|  22 | [Bump wavelet](https://www.mathworks.com/help/wavelet/gs/choose-a-wavelet.html) | $$\psi(t) = e^{-\frac{1}{1 - t^2}}, -1<t <1$$| [Wav-KAN](https://github.com/zavareh1/Wav-KAN)|
 | More and More!!! | - | - | -|
 
 
@@ -65,8 +71,12 @@ Others| 8 | 8 | 1 | 1 | 7 | 8|
 |[Legendre-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/legendre_kan.py) | 4396 | ~55K | ~38m| 0.33 | 26.64 | 0.893 |0.0986|
 |[Lucas-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/lucas_kan.py) | 3532 | ~75K | ~28m | 0.42 | 27.95 | 0.916 |0.0550 |
 |[Laguerre-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/laguerre_kan.py) | 3532 | ~74K | ~28m | 0.39 | 27.39 | 0.912 |0.0593 |
-
-
+|[MexicanHat-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/wav_kan.py) | 3614 | ~66K | ~32m | 0.35 | 31.23 | 0.961 |0.0221 |
+|[Morlet-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/wav_kan.py) | 3614 |  ~67K| ~31m  | 0.38 | 13.06 |0.686 |0.2583 |
+|[DoG-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/wav_kan.py) |3614 | ~75K | ~28m | 0.41 | 32.59 | 0.966  | 0.0174 |
+|[Meyer-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/wav_kan.py) | 3614 | ~36K | ~55m | 0.17 | 11.91 | 0.728 | 0.2991 |
+|[Shannon-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/wav_kan.py) | 3614 | ~73K | ~28m | 0.49 | 9.15 | 0.738 |0.4434 |
+|[Bump-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/wav_kan.py) | × | × |  × | × | × | × | × |
 
 - `360_v2: garden / 30k`, todo
 
@@ -105,6 +115,7 @@ pip install opencv-python==4.3.0.36
 # fcn, fcn_inter, chebyshev, jacobi
 # bessel, chebyshev2, finonacci, hermite
 # legendre, gegenbauer, lucas, laguerre
+# mexican_hat, morlet, dog, meyer, shannon, bump
 bash train_blender.sh [kan_basis_type]
 
 # eval
@@ -118,7 +129,7 @@ bash run_render.sh [exp_path]
 - [Universal Approximation Theorem vs. Kolmogorov–Arnold Theorem](docs/Theorem.md)
 
 # [PAPER](https://github.com/lif314/X-KANeRF)
-COMMING SOON! We will provide a more detailed discussion of the impact of KAN on NeRF in our paper, including KANeRF-based SLAM.
+COMMING SOON! We will provide a more detailed discussion of the impact of KAN on NeRF in our paper.
 
 # Citation
 If you use this benchmark in your research, please cite this project.

@@ -50,5 +50,23 @@ def get_kan_model(kan_basis_type='bspline'):
     elif kan_basis_type == 'laguerre':
         from xKANeRF.xKAN.laguerre_kan import Laguerre_KAN
         return Laguerre_KAN
+    elif kan_basis_type == 'mexican_hat':
+        from xKANeRF.xKAN.wav_kan import Mexican_Hat_KAN
+        return Mexican_Hat_KAN
+    elif kan_basis_type == 'morlet':
+        from xKANeRF.xKAN.wav_kan import Morlet_KAN
+        return Morlet_KAN
+    elif kan_basis_type == 'dog':
+        from xKANeRF.xKAN.wav_kan import Dog_KAN
+        return Dog_KAN
+    elif kan_basis_type == 'meyer':
+        from xKANeRF.xKAN.wav_kan import Meyer_KAN
+        return Meyer_KAN
+    elif kan_basis_type == 'shannon':
+        from xKANeRF.xKAN.wav_kan import Shannon_KAN
+        return Shannon_KAN
+    elif kan_basis_type == 'bump':
+        from xKANeRF.xKAN.wav_kan import Bump_KAN
+        return Bump_KAN
     else:
         print("Not Implemented!!!")
