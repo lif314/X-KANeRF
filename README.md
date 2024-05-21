@@ -32,7 +32,7 @@ To explore this issue, I used [Kolmogorov-Arnold Networks (KAN)](https://github.
 |  19 | [Difference of Gaussians(DoG)](https://en.wikipedia.org/wiki/Difference_of_Gaussians) |  $$\text{DoG}(x, y) = \frac{1}{\sqrt{2\pi}\sigma_1} e^{-\frac{x^2 + y^2}{2\sigma_1^2}} - \frac{1}{\sqrt{2\pi}\sigma_2} e^{-\frac{x^2 + y^2}{2\sigma_2^2}}$$| [Wav-KAN](https://github.com/zavareh1/Wav-KAN)|
 |  20 | [Meyer wavelet](https://en.wikipedia.org/wiki/Meyer_wavelet) |  $$\psi(x) = \sqrt{\frac{2}{T}} \sum_{k=1}^{N} \left(1 - \left(\frac{k}{N}\right)^2\right) \left[ \cos\left(\frac{2\pi x k}{T}\right) - \frac{\sin(\pi x k / T)}{\pi x k / T}\right]$$| [Wav-KAN](https://github.com/zavareh1/Wav-KAN)|
 |  21  | [Shannon wavelet](https://en.wikipedia.org/wiki/Shannon_wavelet) |  $$\psi(t) = \frac{\sin(\pi t) - \sin\left(\frac{\pi t}{2}\right)}{\pi t}$$| [Wav-KAN](https://github.com/zavareh1/Wav-KAN)|
-|  22 | [Bump wavelet](https://www.mathworks.com/help/wavelet/gs/choose-a-wavelet.html) | $$\psi(t) = e^{-\frac{1}{1 - t^2}}, -1<t <1$$| [Wav-KAN](https://github.com/zavareh1/Wav-KAN)|
+|  22 | [Bump wavelet](https://www.mathworks.com/help/wavelet/gs/choose-a-wavelet.html) | $$\psi(t) = e^{-\frac{1}{1 - t^2}}$$| [Wav-KAN](https://github.com/zavareh1/Wav-KAN)|
 | More and More!!! | - | - | -|
 
 
