@@ -62,6 +62,7 @@ Others| 8 | 8 | 1 | 1 | 7 | 8|
 |[FCN-KAN(Iters: 4k)](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/fcn_kan.py)| 5184 | ~4K | ~90m | 0.02 | 29.67 | 0.938 | 0.0401 |
 |[FCN-Interpolation-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/fcn_kan.py)| 6912 | ~52K | ~40m| 0.21 | 32.67 | 0.965 | 0.0187 |
 |[1st Chebyshev-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/chebyshev_kan.py) | 4396 | ~53K | ~40m| 0.34 | 28.56| 0.924 | 0.0523 |
+|[1st Chebyshev-KAN(faster)](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/chebyshev_kan.py) | 4426 | ~86K | ~23m| 0.45 | 28.54| 0.924 | 0.0514 |
 |[Jacobi-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/jacobi_kan.py) | 3532 | ~72K | ~30m| 0.37 | 27.88 | 0.915 |0.0553|
 |[Bessel-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/bessel_kan.py) | 3532 | ~76K | ~28m| 0.33 | 25.79 | 0.878 |0.1156|
 |[2nd Chebyshev-KAN](https://github.com/lif314/X-KANeRF/blob/main/xKANeRF/xKAN/chebyshev2_kan.py) | 4396 | ~55K | ~39m| 0.33 | 28.53 | 0.924 |0.0500|
