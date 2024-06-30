@@ -126,9 +126,6 @@ bash run_render.sh [exp_path]
 # Docs
 - [Universal Approximation Theorem vs. Kolmogorov–Arnold Theorem](docs/Theorem.md)
 
-# [PAPER](https://github.com/lif314/X-KANeRF)
-COMMING SOON! We will provide a more detailed discussion of the impact of KAN on NeRF in our paper.
-
 # Citation
 If you use this benchmark in your research, please cite this project.
 ```bibtex
